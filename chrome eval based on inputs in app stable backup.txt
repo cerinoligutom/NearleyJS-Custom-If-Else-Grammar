@@ -1,0 +1,36 @@
+clean('((((x == 98 OR x <= 99)) AND x == 98) OR (y == 2 AND z == 1) AND IS_MISSING(za))')
+"((((x == 98 || x <= 99)) && x == 98) OR (y == 2 AND z == 1) AND IS_MISSING(za))"
+clean = (param) => param.split('AND').join('&&').split('OR').join('||')
+(param) => param.split('AND').join('&&').split('OR').join('||')
+clean('((((x == 98 OR x <= 99)) AND x == 98) OR (y == 2 AND z == 1) AND IS_MISSING(za))')
+"((((x == 98 || x <= 99)) && x == 98) || (y == 2 && z == 1) && IS_MISSING(za))"
+((((x == 98 || x <= 99)) && x == 98) || (y == 2 && z == 1) && true)
+false
+clean('(((((x > 0 AND y > 0))) AND (((((z > 0 AND IS_MISSING(z)))))) AND y > 0))')
+"(((((x > 0 && y > 0))) && (((((z > 0 && IS_MISSING(z)))))) && y > 0))"
+(((((x > 0 && y > 0))) && (((((z > 0 && false))))) && y > 0))
+false
+clean('((((x > 0 OR z > 0)) AND IS_MISSING(x) AND (z > 0 OR (x > 0 AND z > 0))) AND y > 0 OR z > 0)')
+"((((x > 0 || z > 0)) && IS_MISSING(x) && (z > 0 || (x > 0 && z > 0))) && y > 0 || z > 0)"
+((((x > 0 || z > 0)) && true && (z > 0 || (x > 0 && z > 0))) && y > 0 || z > 0)
+true
+clean('((x >= 99 AND z > 0))')
+"((x >= 99 && z > 0))"
+((x >= 99 && z > 0))
+true
+clean('((x >= 99 AND z > 0))')
+"((x >= 99 && z > 0))"
+((x >= 99 && z > 0))
+true
+clean('(z > 0 AND x > 100 OR IS_MISSING(asd))')
+"(z > 0 && x > 100 || IS_MISSING(asd))"
+(z > 0 && x > 100 || true)
+true
+(((x > 0)) && z > 0)
+true
+clean('((((x > 0 OR z > 0)) AND IS_MISSING(x) AND (z > 0 OR (x > 0 AND z > 0))) AND y > 0 OR z > 0)')
+"((((x > 0 || z > 0)) && IS_MISSING(x) && (z > 0 || (x > 0 && z > 0))) && y > 0 || z > 0)"
+((((x > 0 || z > 0)) && true && (z > 0 || (x > 0 && z > 0))) && y > 0 || z > 0)
+true
+'' + clean
+"(param) => param.split('AND').join('&&').split('OR').join('||')"

@@ -1,0 +1,2044 @@
+Table length: 167
+Number of parses: 1
+Parse Charts
+Chart: 0
+0: {PrimaryExpression →  ● PrimaryExpression$ebnf$1 ElseStatement}, from: 0
+1: {PrimaryExpression$ebnf$1 →  ● PrimaryExpression$ebnf$1$subexpression$1}, from: 0
+2: {PrimaryExpression$ebnf$1 →  ● PrimaryExpression$ebnf$1 PrimaryExpression$ebnf$1$subexpression$2}, from: 0
+3: {PrimaryExpression$ebnf$1$subexpression$1 →  ● IfStatement}, from: 0
+4: {IfStatement →  ● "IF" _ Expression _ ReturnStatement ws}, from: 0
+
+Chart: 1
+0: {IfStatement → "IF" ● _ Expression _ ReturnStatement ws}, from: 0
+1: {_ →  ● _$ebnf$1}, from: 1
+2: {_$ebnf$1 →  ● %_}, from: 1
+3: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 1
+
+Chart: 2
+0: {_$ebnf$1 → %_ ● }, from: 1
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 1
+2: {_ → _$ebnf$1 ● }, from: 1
+3: {IfStatement → "IF" _ ● Expression _ ReturnStatement ws}, from: 0
+4: {Expression →  ● lp __ ConditionalExpression __ rp}, from: 2
+5: {lp →  ● %lparen}, from: 2
+
+Chart: 3
+0: {lp → %lparen ● }, from: 2
+1: {Expression → lp ● __ ConditionalExpression __ rp}, from: 2
+2: {__ →  ● __$ebnf$1}, from: 3
+3: {__$ebnf$1 →  ● }, from: 3
+4: {__$ebnf$1 →  ● __$ebnf$1 %_}, from: 3
+5: {__ → __$ebnf$1 ● }, from: 3
+6: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 3
+7: {Expression → lp __ ● ConditionalExpression __ rp}, from: 2
+8: {ConditionalExpression →  ● LogicalExpression ConditionalExpression$ebnf$1}, from: 3
+9: {ConditionalExpression →  ● LogicalMissingExpression ConditionalExpression$ebnf$2}, from: 3
+10: {ConditionalExpression →  ● lp __ ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 3
+11: {LogicalExpression →  ● %identifier _ RelationalOperator _ %number}, from: 3
+12: {LogicalMissingExpression →  ● "IS_MISSING" lp %identifier rp}, from: 3
+13: {lp →  ● %lparen}, from: 3
+
+Chart: 4
+0: {lp → %lparen ● }, from: 3
+1: {ConditionalExpression → lp ● __ ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 3
+2: {__ →  ● __$ebnf$1}, from: 4
+3: {__$ebnf$1 →  ● }, from: 4
+4: {__$ebnf$1 →  ● __$ebnf$1 %_}, from: 4
+5: {__ → __$ebnf$1 ● }, from: 4
+6: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 4
+7: {ConditionalExpression → lp __ ● ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 3
+8: {ConditionalExpression →  ● LogicalExpression ConditionalExpression$ebnf$1}, from: 4
+9: {ConditionalExpression →  ● LogicalMissingExpression ConditionalExpression$ebnf$2}, from: 4
+10: {ConditionalExpression →  ● lp __ ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 4
+11: {LogicalExpression →  ● %identifier _ RelationalOperator _ %number}, from: 4
+12: {LogicalMissingExpression →  ● "IS_MISSING" lp %identifier rp}, from: 4
+13: {lp →  ● %lparen}, from: 4
+
+Chart: 5
+0: {lp → %lparen ● }, from: 4
+1: {ConditionalExpression → lp ● __ ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 4
+2: {__ →  ● __$ebnf$1}, from: 5
+3: {__$ebnf$1 →  ● }, from: 5
+4: {__$ebnf$1 →  ● __$ebnf$1 %_}, from: 5
+5: {__ → __$ebnf$1 ● }, from: 5
+6: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 5
+7: {ConditionalExpression → lp __ ● ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 4
+8: {ConditionalExpression →  ● LogicalExpression ConditionalExpression$ebnf$1}, from: 5
+9: {ConditionalExpression →  ● LogicalMissingExpression ConditionalExpression$ebnf$2}, from: 5
+10: {ConditionalExpression →  ● lp __ ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 5
+11: {LogicalExpression →  ● %identifier _ RelationalOperator _ %number}, from: 5
+12: {LogicalMissingExpression →  ● "IS_MISSING" lp %identifier rp}, from: 5
+13: {lp →  ● %lparen}, from: 5
+
+Chart: 6
+0: {lp → %lparen ● }, from: 5
+1: {ConditionalExpression → lp ● __ ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 5
+2: {__ →  ● __$ebnf$1}, from: 6
+3: {__$ebnf$1 →  ● }, from: 6
+4: {__$ebnf$1 →  ● __$ebnf$1 %_}, from: 6
+5: {__ → __$ebnf$1 ● }, from: 6
+6: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 6
+7: {ConditionalExpression → lp __ ● ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 5
+8: {ConditionalExpression →  ● LogicalExpression ConditionalExpression$ebnf$1}, from: 6
+9: {ConditionalExpression →  ● LogicalMissingExpression ConditionalExpression$ebnf$2}, from: 6
+10: {ConditionalExpression →  ● lp __ ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 6
+11: {LogicalExpression →  ● %identifier _ RelationalOperator _ %number}, from: 6
+12: {LogicalMissingExpression →  ● "IS_MISSING" lp %identifier rp}, from: 6
+13: {lp →  ● %lparen}, from: 6
+
+Chart: 7
+0: {LogicalExpression → %identifier ● _ RelationalOperator _ %number}, from: 6
+1: {_ →  ● _$ebnf$1}, from: 7
+2: {_$ebnf$1 →  ● %_}, from: 7
+3: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 7
+
+Chart: 8
+0: {_$ebnf$1 → %_ ● }, from: 7
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 7
+2: {_ → _$ebnf$1 ● }, from: 7
+3: {LogicalExpression → %identifier _ ● RelationalOperator _ %number}, from: 6
+4: {RelationalOperator →  ● %gteOperator}, from: 8
+5: {RelationalOperator →  ● %lteOperator}, from: 8
+6: {RelationalOperator →  ● %gtOperator}, from: 8
+7: {RelationalOperator →  ● %ltOperator}, from: 8
+8: {RelationalOperator →  ● %equalityOperator}, from: 8
+
+Chart: 9
+0: {RelationalOperator → %gtOperator ● }, from: 8
+1: {LogicalExpression → %identifier _ RelationalOperator ● _ %number}, from: 6
+2: {_ →  ● _$ebnf$1}, from: 9
+3: {_$ebnf$1 →  ● %_}, from: 9
+4: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 9
+
+Chart: 10
+0: {_$ebnf$1 → %_ ● }, from: 9
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 9
+2: {_ → _$ebnf$1 ● }, from: 9
+3: {LogicalExpression → %identifier _ RelationalOperator _ ● %number}, from: 6
+
+Chart: 11
+0: {LogicalExpression → %identifier _ RelationalOperator _ %number ● }, from: 6
+1: {ConditionalExpression → LogicalExpression ● ConditionalExpression$ebnf$1}, from: 6
+2: {ConditionalExpression$ebnf$1 →  ● ChainableLogicalExpression}, from: 11
+3: {ConditionalExpression$ebnf$1 →  ● }, from: 11
+4: {ChainableLogicalExpression →  ● _ LogicalOperator _ ConditionalExpression}, from: 11
+5: {ConditionalExpression → LogicalExpression ConditionalExpression$ebnf$1 ● }, from: 6
+6: {_ →  ● _$ebnf$1}, from: 11
+7: {ConditionalExpression → lp __ ConditionalExpression ● __ rp ConditionalExpression$ebnf$3}, from: 5
+8: {_$ebnf$1 →  ● %_}, from: 11
+9: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 11
+10: {__ →  ● __$ebnf$1}, from: 11
+11: {__$ebnf$1 →  ● }, from: 11
+12: {__$ebnf$1 →  ● __$ebnf$1 %_}, from: 11
+13: {__ → __$ebnf$1 ● }, from: 11
+14: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 11
+15: {ConditionalExpression → lp __ ConditionalExpression __ ● rp ConditionalExpression$ebnf$3}, from: 5
+16: {rp →  ● %rparen}, from: 11
+
+Chart: 12
+0: {__$ebnf$1 → __$ebnf$1 %_ ● }, from: 11
+1: {_$ebnf$1 → %_ ● }, from: 11
+2: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 11
+3: {__ → __$ebnf$1 ● }, from: 11
+4: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 11
+5: {_ → _$ebnf$1 ● }, from: 11
+6: {ConditionalExpression → lp __ ConditionalExpression __ ● rp ConditionalExpression$ebnf$3}, from: 5
+7: {ChainableLogicalExpression → _ ● LogicalOperator _ ConditionalExpression}, from: 11
+8: {rp →  ● %rparen}, from: 12
+9: {LogicalOperator →  ● "AND"}, from: 12
+10: {LogicalOperator →  ● "OR"}, from: 12
+
+Chart: 13
+0: {LogicalOperator → "OR" ● }, from: 12
+1: {ChainableLogicalExpression → _ LogicalOperator ● _ ConditionalExpression}, from: 11
+2: {_ →  ● _$ebnf$1}, from: 13
+3: {_$ebnf$1 →  ● %_}, from: 13
+4: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 13
+
+Chart: 14
+0: {_$ebnf$1 → %_ ● }, from: 13
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 13
+2: {_ → _$ebnf$1 ● }, from: 13
+3: {ChainableLogicalExpression → _ LogicalOperator _ ● ConditionalExpression}, from: 11
+4: {ConditionalExpression →  ● LogicalExpression ConditionalExpression$ebnf$1}, from: 14
+5: {ConditionalExpression →  ● LogicalMissingExpression ConditionalExpression$ebnf$2}, from: 14
+6: {ConditionalExpression →  ● lp __ ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 14
+7: {LogicalExpression →  ● %identifier _ RelationalOperator _ %number}, from: 14
+8: {LogicalMissingExpression →  ● "IS_MISSING" lp %identifier rp}, from: 14
+9: {lp →  ● %lparen}, from: 14
+
+Chart: 15
+0: {LogicalExpression → %identifier ● _ RelationalOperator _ %number}, from: 14
+1: {_ →  ● _$ebnf$1}, from: 15
+2: {_$ebnf$1 →  ● %_}, from: 15
+3: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 15
+
+Chart: 16
+0: {_$ebnf$1 → %_ ● }, from: 15
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 15
+2: {_ → _$ebnf$1 ● }, from: 15
+3: {LogicalExpression → %identifier _ ● RelationalOperator _ %number}, from: 14
+4: {RelationalOperator →  ● %gteOperator}, from: 16
+5: {RelationalOperator →  ● %lteOperator}, from: 16
+6: {RelationalOperator →  ● %gtOperator}, from: 16
+7: {RelationalOperator →  ● %ltOperator}, from: 16
+8: {RelationalOperator →  ● %equalityOperator}, from: 16
+
+Chart: 17
+0: {RelationalOperator → %gtOperator ● }, from: 16
+1: {LogicalExpression → %identifier _ RelationalOperator ● _ %number}, from: 14
+2: {_ →  ● _$ebnf$1}, from: 17
+3: {_$ebnf$1 →  ● %_}, from: 17
+4: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 17
+
+Chart: 18
+0: {_$ebnf$1 → %_ ● }, from: 17
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 17
+2: {_ → _$ebnf$1 ● }, from: 17
+3: {LogicalExpression → %identifier _ RelationalOperator _ ● %number}, from: 14
+
+Chart: 19
+0: {LogicalExpression → %identifier _ RelationalOperator _ %number ● }, from: 14
+1: {ConditionalExpression → LogicalExpression ● ConditionalExpression$ebnf$1}, from: 14
+2: {ConditionalExpression$ebnf$1 →  ● ChainableLogicalExpression}, from: 19
+3: {ConditionalExpression$ebnf$1 →  ● }, from: 19
+4: {ChainableLogicalExpression →  ● _ LogicalOperator _ ConditionalExpression}, from: 19
+5: {ConditionalExpression → LogicalExpression ConditionalExpression$ebnf$1 ● }, from: 14
+6: {_ →  ● _$ebnf$1}, from: 19
+7: {ChainableLogicalExpression → _ LogicalOperator _ ConditionalExpression ● }, from: 11
+8: {_$ebnf$1 →  ● %_}, from: 19
+9: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 19
+10: {ConditionalExpression$ebnf$1 → ChainableLogicalExpression ● }, from: 11
+11: {ConditionalExpression → LogicalExpression ConditionalExpression$ebnf$1 ● }, from: 6
+12: {ConditionalExpression → lp __ ConditionalExpression ● __ rp ConditionalExpression$ebnf$3}, from: 5
+13: {__ →  ● __$ebnf$1}, from: 19
+14: {__$ebnf$1 →  ● }, from: 19
+15: {__$ebnf$1 →  ● __$ebnf$1 %_}, from: 19
+16: {__ → __$ebnf$1 ● }, from: 19
+17: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 19
+18: {ConditionalExpression → lp __ ConditionalExpression __ ● rp ConditionalExpression$ebnf$3}, from: 5
+19: {rp →  ● %rparen}, from: 19
+
+Chart: 20
+0: {rp → %rparen ● }, from: 19
+1: {ConditionalExpression → lp __ ConditionalExpression __ rp ● ConditionalExpression$ebnf$3}, from: 5
+2: {ConditionalExpression$ebnf$3 →  ● ChainableLogicalExpression}, from: 20
+3: {ConditionalExpression$ebnf$3 →  ● }, from: 20
+4: {ChainableLogicalExpression →  ● _ LogicalOperator _ ConditionalExpression}, from: 20
+5: {ConditionalExpression → lp __ ConditionalExpression __ rp ConditionalExpression$ebnf$3 ● }, from: 5
+6: {_ →  ● _$ebnf$1}, from: 20
+7: {ConditionalExpression → lp __ ConditionalExpression ● __ rp ConditionalExpression$ebnf$3}, from: 4
+8: {_$ebnf$1 →  ● %_}, from: 20
+9: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 20
+10: {__ →  ● __$ebnf$1}, from: 20
+11: {__$ebnf$1 →  ● }, from: 20
+12: {__$ebnf$1 →  ● __$ebnf$1 %_}, from: 20
+13: {__ → __$ebnf$1 ● }, from: 20
+14: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 20
+15: {ConditionalExpression → lp __ ConditionalExpression __ ● rp ConditionalExpression$ebnf$3}, from: 4
+16: {rp →  ● %rparen}, from: 20
+
+Chart: 21
+0: {rp → %rparen ● }, from: 20
+1: {ConditionalExpression → lp __ ConditionalExpression __ rp ● ConditionalExpression$ebnf$3}, from: 4
+2: {ConditionalExpression$ebnf$3 →  ● ChainableLogicalExpression}, from: 21
+3: {ConditionalExpression$ebnf$3 →  ● }, from: 21
+4: {ChainableLogicalExpression →  ● _ LogicalOperator _ ConditionalExpression}, from: 21
+5: {ConditionalExpression → lp __ ConditionalExpression __ rp ConditionalExpression$ebnf$3 ● }, from: 4
+6: {_ →  ● _$ebnf$1}, from: 21
+7: {ConditionalExpression → lp __ ConditionalExpression ● __ rp ConditionalExpression$ebnf$3}, from: 3
+8: {_$ebnf$1 →  ● %_}, from: 21
+9: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 21
+10: {__ →  ● __$ebnf$1}, from: 21
+11: {__$ebnf$1 →  ● }, from: 21
+12: {__$ebnf$1 →  ● __$ebnf$1 %_}, from: 21
+13: {__ → __$ebnf$1 ● }, from: 21
+14: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 21
+15: {ConditionalExpression → lp __ ConditionalExpression __ ● rp ConditionalExpression$ebnf$3}, from: 3
+16: {rp →  ● %rparen}, from: 21
+
+Chart: 22
+0: {__$ebnf$1 → __$ebnf$1 %_ ● }, from: 21
+1: {_$ebnf$1 → %_ ● }, from: 21
+2: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 21
+3: {__ → __$ebnf$1 ● }, from: 21
+4: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 21
+5: {_ → _$ebnf$1 ● }, from: 21
+6: {ConditionalExpression → lp __ ConditionalExpression __ ● rp ConditionalExpression$ebnf$3}, from: 3
+7: {ChainableLogicalExpression → _ ● LogicalOperator _ ConditionalExpression}, from: 21
+8: {rp →  ● %rparen}, from: 22
+9: {LogicalOperator →  ● "AND"}, from: 22
+10: {LogicalOperator →  ● "OR"}, from: 22
+
+Chart: 23
+0: {LogicalOperator → "AND" ● }, from: 22
+1: {ChainableLogicalExpression → _ LogicalOperator ● _ ConditionalExpression}, from: 21
+2: {_ →  ● _$ebnf$1}, from: 23
+3: {_$ebnf$1 →  ● %_}, from: 23
+4: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 23
+
+Chart: 24
+0: {_$ebnf$1 → %_ ● }, from: 23
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 23
+2: {_ → _$ebnf$1 ● }, from: 23
+3: {ChainableLogicalExpression → _ LogicalOperator _ ● ConditionalExpression}, from: 21
+4: {ConditionalExpression →  ● LogicalExpression ConditionalExpression$ebnf$1}, from: 24
+5: {ConditionalExpression →  ● LogicalMissingExpression ConditionalExpression$ebnf$2}, from: 24
+6: {ConditionalExpression →  ● lp __ ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 24
+7: {LogicalExpression →  ● %identifier _ RelationalOperator _ %number}, from: 24
+8: {LogicalMissingExpression →  ● "IS_MISSING" lp %identifier rp}, from: 24
+9: {lp →  ● %lparen}, from: 24
+
+Chart: 25
+0: {LogicalMissingExpression → "IS_MISSING" ● lp %identifier rp}, from: 24
+1: {lp →  ● %lparen}, from: 25
+
+Chart: 26
+0: {lp → %lparen ● }, from: 25
+1: {LogicalMissingExpression → "IS_MISSING" lp ● %identifier rp}, from: 24
+
+Chart: 27
+0: {LogicalMissingExpression → "IS_MISSING" lp %identifier ● rp}, from: 24
+1: {rp →  ● %rparen}, from: 27
+
+Chart: 28
+0: {rp → %rparen ● }, from: 27
+1: {LogicalMissingExpression → "IS_MISSING" lp %identifier rp ● }, from: 24
+2: {ConditionalExpression → LogicalMissingExpression ● ConditionalExpression$ebnf$2}, from: 24
+3: {ConditionalExpression$ebnf$2 →  ● ChainableLogicalExpression}, from: 28
+4: {ConditionalExpression$ebnf$2 →  ● }, from: 28
+5: {ChainableLogicalExpression →  ● _ LogicalOperator _ ConditionalExpression}, from: 28
+6: {ConditionalExpression → LogicalMissingExpression ConditionalExpression$ebnf$2 ● }, from: 24
+7: {_ →  ● _$ebnf$1}, from: 28
+8: {ChainableLogicalExpression → _ LogicalOperator _ ConditionalExpression ● }, from: 21
+9: {_$ebnf$1 →  ● %_}, from: 28
+10: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 28
+11: {ConditionalExpression$ebnf$3 → ChainableLogicalExpression ● }, from: 21
+12: {ConditionalExpression → lp __ ConditionalExpression __ rp ConditionalExpression$ebnf$3 ● }, from: 4
+13: {ConditionalExpression → lp __ ConditionalExpression ● __ rp ConditionalExpression$ebnf$3}, from: 3
+14: {__ →  ● __$ebnf$1}, from: 28
+15: {__$ebnf$1 →  ● }, from: 28
+16: {__$ebnf$1 →  ● __$ebnf$1 %_}, from: 28
+17: {__ → __$ebnf$1 ● }, from: 28
+18: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 28
+19: {ConditionalExpression → lp __ ConditionalExpression __ ● rp ConditionalExpression$ebnf$3}, from: 3
+20: {rp →  ● %rparen}, from: 28
+
+Chart: 29
+0: {__$ebnf$1 → __$ebnf$1 %_ ● }, from: 28
+1: {_$ebnf$1 → %_ ● }, from: 28
+2: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 28
+3: {__ → __$ebnf$1 ● }, from: 28
+4: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 28
+5: {_ → _$ebnf$1 ● }, from: 28
+6: {ConditionalExpression → lp __ ConditionalExpression __ ● rp ConditionalExpression$ebnf$3}, from: 3
+7: {ChainableLogicalExpression → _ ● LogicalOperator _ ConditionalExpression}, from: 28
+8: {rp →  ● %rparen}, from: 29
+9: {LogicalOperator →  ● "AND"}, from: 29
+10: {LogicalOperator →  ● "OR"}, from: 29
+
+Chart: 30
+0: {LogicalOperator → "AND" ● }, from: 29
+1: {ChainableLogicalExpression → _ LogicalOperator ● _ ConditionalExpression}, from: 28
+2: {_ →  ● _$ebnf$1}, from: 30
+3: {_$ebnf$1 →  ● %_}, from: 30
+4: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 30
+
+Chart: 31
+0: {_$ebnf$1 → %_ ● }, from: 30
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 30
+2: {_ → _$ebnf$1 ● }, from: 30
+3: {ChainableLogicalExpression → _ LogicalOperator _ ● ConditionalExpression}, from: 28
+4: {ConditionalExpression →  ● LogicalExpression ConditionalExpression$ebnf$1}, from: 31
+5: {ConditionalExpression →  ● LogicalMissingExpression ConditionalExpression$ebnf$2}, from: 31
+6: {ConditionalExpression →  ● lp __ ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 31
+7: {LogicalExpression →  ● %identifier _ RelationalOperator _ %number}, from: 31
+8: {LogicalMissingExpression →  ● "IS_MISSING" lp %identifier rp}, from: 31
+9: {lp →  ● %lparen}, from: 31
+
+Chart: 32
+0: {lp → %lparen ● }, from: 31
+1: {ConditionalExpression → lp ● __ ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 31
+2: {__ →  ● __$ebnf$1}, from: 32
+3: {__$ebnf$1 →  ● }, from: 32
+4: {__$ebnf$1 →  ● __$ebnf$1 %_}, from: 32
+5: {__ → __$ebnf$1 ● }, from: 32
+6: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 32
+7: {ConditionalExpression → lp __ ● ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 31
+8: {ConditionalExpression →  ● LogicalExpression ConditionalExpression$ebnf$1}, from: 32
+9: {ConditionalExpression →  ● LogicalMissingExpression ConditionalExpression$ebnf$2}, from: 32
+10: {ConditionalExpression →  ● lp __ ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 32
+11: {LogicalExpression →  ● %identifier _ RelationalOperator _ %number}, from: 32
+12: {LogicalMissingExpression →  ● "IS_MISSING" lp %identifier rp}, from: 32
+13: {lp →  ● %lparen}, from: 32
+
+Chart: 33
+0: {LogicalExpression → %identifier ● _ RelationalOperator _ %number}, from: 32
+1: {_ →  ● _$ebnf$1}, from: 33
+2: {_$ebnf$1 →  ● %_}, from: 33
+3: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 33
+
+Chart: 34
+0: {_$ebnf$1 → %_ ● }, from: 33
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 33
+2: {_ → _$ebnf$1 ● }, from: 33
+3: {LogicalExpression → %identifier _ ● RelationalOperator _ %number}, from: 32
+4: {RelationalOperator →  ● %gteOperator}, from: 34
+5: {RelationalOperator →  ● %lteOperator}, from: 34
+6: {RelationalOperator →  ● %gtOperator}, from: 34
+7: {RelationalOperator →  ● %ltOperator}, from: 34
+8: {RelationalOperator →  ● %equalityOperator}, from: 34
+
+Chart: 35
+0: {RelationalOperator → %gtOperator ● }, from: 34
+1: {LogicalExpression → %identifier _ RelationalOperator ● _ %number}, from: 32
+2: {_ →  ● _$ebnf$1}, from: 35
+3: {_$ebnf$1 →  ● %_}, from: 35
+4: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 35
+
+Chart: 36
+0: {_$ebnf$1 → %_ ● }, from: 35
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 35
+2: {_ → _$ebnf$1 ● }, from: 35
+3: {LogicalExpression → %identifier _ RelationalOperator _ ● %number}, from: 32
+
+Chart: 37
+0: {LogicalExpression → %identifier _ RelationalOperator _ %number ● }, from: 32
+1: {ConditionalExpression → LogicalExpression ● ConditionalExpression$ebnf$1}, from: 32
+2: {ConditionalExpression$ebnf$1 →  ● ChainableLogicalExpression}, from: 37
+3: {ConditionalExpression$ebnf$1 →  ● }, from: 37
+4: {ChainableLogicalExpression →  ● _ LogicalOperator _ ConditionalExpression}, from: 37
+5: {ConditionalExpression → LogicalExpression ConditionalExpression$ebnf$1 ● }, from: 32
+6: {_ →  ● _$ebnf$1}, from: 37
+7: {ConditionalExpression → lp __ ConditionalExpression ● __ rp ConditionalExpression$ebnf$3}, from: 31
+8: {_$ebnf$1 →  ● %_}, from: 37
+9: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 37
+10: {__ →  ● __$ebnf$1}, from: 37
+11: {__$ebnf$1 →  ● }, from: 37
+12: {__$ebnf$1 →  ● __$ebnf$1 %_}, from: 37
+13: {__ → __$ebnf$1 ● }, from: 37
+14: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 37
+15: {ConditionalExpression → lp __ ConditionalExpression __ ● rp ConditionalExpression$ebnf$3}, from: 31
+16: {rp →  ● %rparen}, from: 37
+
+Chart: 38
+0: {__$ebnf$1 → __$ebnf$1 %_ ● }, from: 37
+1: {_$ebnf$1 → %_ ● }, from: 37
+2: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 37
+3: {__ → __$ebnf$1 ● }, from: 37
+4: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 37
+5: {_ → _$ebnf$1 ● }, from: 37
+6: {ConditionalExpression → lp __ ConditionalExpression __ ● rp ConditionalExpression$ebnf$3}, from: 31
+7: {ChainableLogicalExpression → _ ● LogicalOperator _ ConditionalExpression}, from: 37
+8: {rp →  ● %rparen}, from: 38
+9: {LogicalOperator →  ● "AND"}, from: 38
+10: {LogicalOperator →  ● "OR"}, from: 38
+
+Chart: 39
+0: {LogicalOperator → "OR" ● }, from: 38
+1: {ChainableLogicalExpression → _ LogicalOperator ● _ ConditionalExpression}, from: 37
+2: {_ →  ● _$ebnf$1}, from: 39
+3: {_$ebnf$1 →  ● %_}, from: 39
+4: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 39
+
+Chart: 40
+0: {_$ebnf$1 → %_ ● }, from: 39
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 39
+2: {_ → _$ebnf$1 ● }, from: 39
+3: {ChainableLogicalExpression → _ LogicalOperator _ ● ConditionalExpression}, from: 37
+4: {ConditionalExpression →  ● LogicalExpression ConditionalExpression$ebnf$1}, from: 40
+5: {ConditionalExpression →  ● LogicalMissingExpression ConditionalExpression$ebnf$2}, from: 40
+6: {ConditionalExpression →  ● lp __ ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 40
+7: {LogicalExpression →  ● %identifier _ RelationalOperator _ %number}, from: 40
+8: {LogicalMissingExpression →  ● "IS_MISSING" lp %identifier rp}, from: 40
+9: {lp →  ● %lparen}, from: 40
+
+Chart: 41
+0: {lp → %lparen ● }, from: 40
+1: {ConditionalExpression → lp ● __ ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 40
+2: {__ →  ● __$ebnf$1}, from: 41
+3: {__$ebnf$1 →  ● }, from: 41
+4: {__$ebnf$1 →  ● __$ebnf$1 %_}, from: 41
+5: {__ → __$ebnf$1 ● }, from: 41
+6: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 41
+7: {ConditionalExpression → lp __ ● ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 40
+8: {ConditionalExpression →  ● LogicalExpression ConditionalExpression$ebnf$1}, from: 41
+9: {ConditionalExpression →  ● LogicalMissingExpression ConditionalExpression$ebnf$2}, from: 41
+10: {ConditionalExpression →  ● lp __ ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 41
+11: {LogicalExpression →  ● %identifier _ RelationalOperator _ %number}, from: 41
+12: {LogicalMissingExpression →  ● "IS_MISSING" lp %identifier rp}, from: 41
+13: {lp →  ● %lparen}, from: 41
+
+Chart: 42
+0: {LogicalExpression → %identifier ● _ RelationalOperator _ %number}, from: 41
+1: {_ →  ● _$ebnf$1}, from: 42
+2: {_$ebnf$1 →  ● %_}, from: 42
+3: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 42
+
+Chart: 43
+0: {_$ebnf$1 → %_ ● }, from: 42
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 42
+2: {_ → _$ebnf$1 ● }, from: 42
+3: {LogicalExpression → %identifier _ ● RelationalOperator _ %number}, from: 41
+4: {RelationalOperator →  ● %gteOperator}, from: 43
+5: {RelationalOperator →  ● %lteOperator}, from: 43
+6: {RelationalOperator →  ● %gtOperator}, from: 43
+7: {RelationalOperator →  ● %ltOperator}, from: 43
+8: {RelationalOperator →  ● %equalityOperator}, from: 43
+
+Chart: 44
+0: {RelationalOperator → %gtOperator ● }, from: 43
+1: {LogicalExpression → %identifier _ RelationalOperator ● _ %number}, from: 41
+2: {_ →  ● _$ebnf$1}, from: 44
+3: {_$ebnf$1 →  ● %_}, from: 44
+4: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 44
+
+Chart: 45
+0: {_$ebnf$1 → %_ ● }, from: 44
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 44
+2: {_ → _$ebnf$1 ● }, from: 44
+3: {LogicalExpression → %identifier _ RelationalOperator _ ● %number}, from: 41
+
+Chart: 46
+0: {LogicalExpression → %identifier _ RelationalOperator _ %number ● }, from: 41
+1: {ConditionalExpression → LogicalExpression ● ConditionalExpression$ebnf$1}, from: 41
+2: {ConditionalExpression$ebnf$1 →  ● ChainableLogicalExpression}, from: 46
+3: {ConditionalExpression$ebnf$1 →  ● }, from: 46
+4: {ChainableLogicalExpression →  ● _ LogicalOperator _ ConditionalExpression}, from: 46
+5: {ConditionalExpression → LogicalExpression ConditionalExpression$ebnf$1 ● }, from: 41
+6: {_ →  ● _$ebnf$1}, from: 46
+7: {ConditionalExpression → lp __ ConditionalExpression ● __ rp ConditionalExpression$ebnf$3}, from: 40
+8: {_$ebnf$1 →  ● %_}, from: 46
+9: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 46
+10: {__ →  ● __$ebnf$1}, from: 46
+11: {__$ebnf$1 →  ● }, from: 46
+12: {__$ebnf$1 →  ● __$ebnf$1 %_}, from: 46
+13: {__ → __$ebnf$1 ● }, from: 46
+14: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 46
+15: {ConditionalExpression → lp __ ConditionalExpression __ ● rp ConditionalExpression$ebnf$3}, from: 40
+16: {rp →  ● %rparen}, from: 46
+
+Chart: 47
+0: {__$ebnf$1 → __$ebnf$1 %_ ● }, from: 46
+1: {_$ebnf$1 → %_ ● }, from: 46
+2: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 46
+3: {__ → __$ebnf$1 ● }, from: 46
+4: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 46
+5: {_ → _$ebnf$1 ● }, from: 46
+6: {ConditionalExpression → lp __ ConditionalExpression __ ● rp ConditionalExpression$ebnf$3}, from: 40
+7: {ChainableLogicalExpression → _ ● LogicalOperator _ ConditionalExpression}, from: 46
+8: {rp →  ● %rparen}, from: 47
+9: {LogicalOperator →  ● "AND"}, from: 47
+10: {LogicalOperator →  ● "OR"}, from: 47
+
+Chart: 48
+0: {LogicalOperator → "AND" ● }, from: 47
+1: {ChainableLogicalExpression → _ LogicalOperator ● _ ConditionalExpression}, from: 46
+2: {_ →  ● _$ebnf$1}, from: 48
+3: {_$ebnf$1 →  ● %_}, from: 48
+4: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 48
+
+Chart: 49
+0: {_$ebnf$1 → %_ ● }, from: 48
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 48
+2: {_ → _$ebnf$1 ● }, from: 48
+3: {ChainableLogicalExpression → _ LogicalOperator _ ● ConditionalExpression}, from: 46
+4: {ConditionalExpression →  ● LogicalExpression ConditionalExpression$ebnf$1}, from: 49
+5: {ConditionalExpression →  ● LogicalMissingExpression ConditionalExpression$ebnf$2}, from: 49
+6: {ConditionalExpression →  ● lp __ ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 49
+7: {LogicalExpression →  ● %identifier _ RelationalOperator _ %number}, from: 49
+8: {LogicalMissingExpression →  ● "IS_MISSING" lp %identifier rp}, from: 49
+9: {lp →  ● %lparen}, from: 49
+
+Chart: 50
+0: {LogicalExpression → %identifier ● _ RelationalOperator _ %number}, from: 49
+1: {_ →  ● _$ebnf$1}, from: 50
+2: {_$ebnf$1 →  ● %_}, from: 50
+3: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 50
+
+Chart: 51
+0: {_$ebnf$1 → %_ ● }, from: 50
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 50
+2: {_ → _$ebnf$1 ● }, from: 50
+3: {LogicalExpression → %identifier _ ● RelationalOperator _ %number}, from: 49
+4: {RelationalOperator →  ● %gteOperator}, from: 51
+5: {RelationalOperator →  ● %lteOperator}, from: 51
+6: {RelationalOperator →  ● %gtOperator}, from: 51
+7: {RelationalOperator →  ● %ltOperator}, from: 51
+8: {RelationalOperator →  ● %equalityOperator}, from: 51
+
+Chart: 52
+0: {RelationalOperator → %gtOperator ● }, from: 51
+1: {LogicalExpression → %identifier _ RelationalOperator ● _ %number}, from: 49
+2: {_ →  ● _$ebnf$1}, from: 52
+3: {_$ebnf$1 →  ● %_}, from: 52
+4: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 52
+
+Chart: 53
+0: {_$ebnf$1 → %_ ● }, from: 52
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 52
+2: {_ → _$ebnf$1 ● }, from: 52
+3: {LogicalExpression → %identifier _ RelationalOperator _ ● %number}, from: 49
+
+Chart: 54
+0: {LogicalExpression → %identifier _ RelationalOperator _ %number ● }, from: 49
+1: {ConditionalExpression → LogicalExpression ● ConditionalExpression$ebnf$1}, from: 49
+2: {ConditionalExpression$ebnf$1 →  ● ChainableLogicalExpression}, from: 54
+3: {ConditionalExpression$ebnf$1 →  ● }, from: 54
+4: {ChainableLogicalExpression →  ● _ LogicalOperator _ ConditionalExpression}, from: 54
+5: {ConditionalExpression → LogicalExpression ConditionalExpression$ebnf$1 ● }, from: 49
+6: {_ →  ● _$ebnf$1}, from: 54
+7: {ChainableLogicalExpression → _ LogicalOperator _ ConditionalExpression ● }, from: 46
+8: {_$ebnf$1 →  ● %_}, from: 54
+9: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 54
+10: {ConditionalExpression$ebnf$1 → ChainableLogicalExpression ● }, from: 46
+11: {ConditionalExpression → LogicalExpression ConditionalExpression$ebnf$1 ● }, from: 41
+12: {ConditionalExpression → lp __ ConditionalExpression ● __ rp ConditionalExpression$ebnf$3}, from: 40
+13: {__ →  ● __$ebnf$1}, from: 54
+14: {__$ebnf$1 →  ● }, from: 54
+15: {__$ebnf$1 →  ● __$ebnf$1 %_}, from: 54
+16: {__ → __$ebnf$1 ● }, from: 54
+17: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 54
+18: {ConditionalExpression → lp __ ConditionalExpression __ ● rp ConditionalExpression$ebnf$3}, from: 40
+19: {rp →  ● %rparen}, from: 54
+
+Chart: 55
+0: {rp → %rparen ● }, from: 54
+1: {ConditionalExpression → lp __ ConditionalExpression __ rp ● ConditionalExpression$ebnf$3}, from: 40
+2: {ConditionalExpression$ebnf$3 →  ● ChainableLogicalExpression}, from: 55
+3: {ConditionalExpression$ebnf$3 →  ● }, from: 55
+4: {ChainableLogicalExpression →  ● _ LogicalOperator _ ConditionalExpression}, from: 55
+5: {ConditionalExpression → lp __ ConditionalExpression __ rp ConditionalExpression$ebnf$3 ● }, from: 40
+6: {_ →  ● _$ebnf$1}, from: 55
+7: {ChainableLogicalExpression → _ LogicalOperator _ ConditionalExpression ● }, from: 37
+8: {_$ebnf$1 →  ● %_}, from: 55
+9: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 55
+10: {ConditionalExpression$ebnf$1 → ChainableLogicalExpression ● }, from: 37
+11: {ConditionalExpression → LogicalExpression ConditionalExpression$ebnf$1 ● }, from: 32
+12: {ConditionalExpression → lp __ ConditionalExpression ● __ rp ConditionalExpression$ebnf$3}, from: 31
+13: {__ →  ● __$ebnf$1}, from: 55
+14: {__$ebnf$1 →  ● }, from: 55
+15: {__$ebnf$1 →  ● __$ebnf$1 %_}, from: 55
+16: {__ → __$ebnf$1 ● }, from: 55
+17: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 55
+18: {ConditionalExpression → lp __ ConditionalExpression __ ● rp ConditionalExpression$ebnf$3}, from: 31
+19: {rp →  ● %rparen}, from: 55
+
+Chart: 56
+0: {rp → %rparen ● }, from: 55
+1: {ConditionalExpression → lp __ ConditionalExpression __ rp ● ConditionalExpression$ebnf$3}, from: 31
+2: {ConditionalExpression$ebnf$3 →  ● ChainableLogicalExpression}, from: 56
+3: {ConditionalExpression$ebnf$3 →  ● }, from: 56
+4: {ChainableLogicalExpression →  ● _ LogicalOperator _ ConditionalExpression}, from: 56
+5: {ConditionalExpression → lp __ ConditionalExpression __ rp ConditionalExpression$ebnf$3 ● }, from: 31
+6: {_ →  ● _$ebnf$1}, from: 56
+7: {ChainableLogicalExpression → _ LogicalOperator _ ConditionalExpression ● }, from: 28
+8: {_$ebnf$1 →  ● %_}, from: 56
+9: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 56
+10: {ConditionalExpression$ebnf$2 → ChainableLogicalExpression ● }, from: 28
+11: {ConditionalExpression → LogicalMissingExpression ConditionalExpression$ebnf$2 ● }, from: 24
+12: {ChainableLogicalExpression → _ LogicalOperator _ ConditionalExpression ● }, from: 21
+13: {ConditionalExpression$ebnf$3 → ChainableLogicalExpression ● }, from: 21
+14: {ConditionalExpression → lp __ ConditionalExpression __ rp ConditionalExpression$ebnf$3 ● }, from: 4
+15: {ConditionalExpression → lp __ ConditionalExpression ● __ rp ConditionalExpression$ebnf$3}, from: 3
+16: {__ →  ● __$ebnf$1}, from: 56
+17: {__$ebnf$1 →  ● }, from: 56
+18: {__$ebnf$1 →  ● __$ebnf$1 %_}, from: 56
+19: {__ → __$ebnf$1 ● }, from: 56
+20: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 56
+21: {ConditionalExpression → lp __ ConditionalExpression __ ● rp ConditionalExpression$ebnf$3}, from: 3
+22: {rp →  ● %rparen}, from: 56
+
+Chart: 57
+0: {rp → %rparen ● }, from: 56
+1: {ConditionalExpression → lp __ ConditionalExpression __ rp ● ConditionalExpression$ebnf$3}, from: 3
+2: {ConditionalExpression$ebnf$3 →  ● ChainableLogicalExpression}, from: 57
+3: {ConditionalExpression$ebnf$3 →  ● }, from: 57
+4: {ChainableLogicalExpression →  ● _ LogicalOperator _ ConditionalExpression}, from: 57
+5: {ConditionalExpression → lp __ ConditionalExpression __ rp ConditionalExpression$ebnf$3 ● }, from: 3
+6: {_ →  ● _$ebnf$1}, from: 57
+7: {Expression → lp __ ConditionalExpression ● __ rp}, from: 2
+8: {_$ebnf$1 →  ● %_}, from: 57
+9: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 57
+10: {__ →  ● __$ebnf$1}, from: 57
+11: {__$ebnf$1 →  ● }, from: 57
+12: {__$ebnf$1 →  ● __$ebnf$1 %_}, from: 57
+13: {__ → __$ebnf$1 ● }, from: 57
+14: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 57
+15: {Expression → lp __ ConditionalExpression __ ● rp}, from: 2
+16: {rp →  ● %rparen}, from: 57
+
+Chart: 58
+0: {__$ebnf$1 → __$ebnf$1 %_ ● }, from: 57
+1: {_$ebnf$1 → %_ ● }, from: 57
+2: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 57
+3: {__ → __$ebnf$1 ● }, from: 57
+4: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 57
+5: {_ → _$ebnf$1 ● }, from: 57
+6: {Expression → lp __ ConditionalExpression __ ● rp}, from: 2
+7: {ChainableLogicalExpression → _ ● LogicalOperator _ ConditionalExpression}, from: 57
+8: {rp →  ● %rparen}, from: 58
+9: {LogicalOperator →  ● "AND"}, from: 58
+10: {LogicalOperator →  ● "OR"}, from: 58
+
+Chart: 59
+0: {LogicalOperator → "AND" ● }, from: 58
+1: {ChainableLogicalExpression → _ LogicalOperator ● _ ConditionalExpression}, from: 57
+2: {_ →  ● _$ebnf$1}, from: 59
+3: {_$ebnf$1 →  ● %_}, from: 59
+4: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 59
+
+Chart: 60
+0: {_$ebnf$1 → %_ ● }, from: 59
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 59
+2: {_ → _$ebnf$1 ● }, from: 59
+3: {ChainableLogicalExpression → _ LogicalOperator _ ● ConditionalExpression}, from: 57
+4: {ConditionalExpression →  ● LogicalExpression ConditionalExpression$ebnf$1}, from: 60
+5: {ConditionalExpression →  ● LogicalMissingExpression ConditionalExpression$ebnf$2}, from: 60
+6: {ConditionalExpression →  ● lp __ ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 60
+7: {LogicalExpression →  ● %identifier _ RelationalOperator _ %number}, from: 60
+8: {LogicalMissingExpression →  ● "IS_MISSING" lp %identifier rp}, from: 60
+9: {lp →  ● %lparen}, from: 60
+
+Chart: 61
+0: {LogicalExpression → %identifier ● _ RelationalOperator _ %number}, from: 60
+1: {_ →  ● _$ebnf$1}, from: 61
+2: {_$ebnf$1 →  ● %_}, from: 61
+3: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 61
+
+Chart: 62
+0: {_$ebnf$1 → %_ ● }, from: 61
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 61
+2: {_ → _$ebnf$1 ● }, from: 61
+3: {LogicalExpression → %identifier _ ● RelationalOperator _ %number}, from: 60
+4: {RelationalOperator →  ● %gteOperator}, from: 62
+5: {RelationalOperator →  ● %lteOperator}, from: 62
+6: {RelationalOperator →  ● %gtOperator}, from: 62
+7: {RelationalOperator →  ● %ltOperator}, from: 62
+8: {RelationalOperator →  ● %equalityOperator}, from: 62
+
+Chart: 63
+0: {RelationalOperator → %gtOperator ● }, from: 62
+1: {LogicalExpression → %identifier _ RelationalOperator ● _ %number}, from: 60
+2: {_ →  ● _$ebnf$1}, from: 63
+3: {_$ebnf$1 →  ● %_}, from: 63
+4: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 63
+
+Chart: 64
+0: {_$ebnf$1 → %_ ● }, from: 63
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 63
+2: {_ → _$ebnf$1 ● }, from: 63
+3: {LogicalExpression → %identifier _ RelationalOperator _ ● %number}, from: 60
+
+Chart: 65
+0: {LogicalExpression → %identifier _ RelationalOperator _ %number ● }, from: 60
+1: {ConditionalExpression → LogicalExpression ● ConditionalExpression$ebnf$1}, from: 60
+2: {ConditionalExpression$ebnf$1 →  ● ChainableLogicalExpression}, from: 65
+3: {ConditionalExpression$ebnf$1 →  ● }, from: 65
+4: {ChainableLogicalExpression →  ● _ LogicalOperator _ ConditionalExpression}, from: 65
+5: {ConditionalExpression → LogicalExpression ConditionalExpression$ebnf$1 ● }, from: 60
+6: {_ →  ● _$ebnf$1}, from: 65
+7: {ChainableLogicalExpression → _ LogicalOperator _ ConditionalExpression ● }, from: 57
+8: {_$ebnf$1 →  ● %_}, from: 65
+9: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 65
+10: {ConditionalExpression$ebnf$3 → ChainableLogicalExpression ● }, from: 57
+11: {ConditionalExpression → lp __ ConditionalExpression __ rp ConditionalExpression$ebnf$3 ● }, from: 3
+12: {Expression → lp __ ConditionalExpression ● __ rp}, from: 2
+13: {__ →  ● __$ebnf$1}, from: 65
+14: {__$ebnf$1 →  ● }, from: 65
+15: {__$ebnf$1 →  ● __$ebnf$1 %_}, from: 65
+16: {__ → __$ebnf$1 ● }, from: 65
+17: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 65
+18: {Expression → lp __ ConditionalExpression __ ● rp}, from: 2
+19: {rp →  ● %rparen}, from: 65
+
+Chart: 66
+0: {__$ebnf$1 → __$ebnf$1 %_ ● }, from: 65
+1: {_$ebnf$1 → %_ ● }, from: 65
+2: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 65
+3: {__ → __$ebnf$1 ● }, from: 65
+4: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 65
+5: {_ → _$ebnf$1 ● }, from: 65
+6: {Expression → lp __ ConditionalExpression __ ● rp}, from: 2
+7: {ChainableLogicalExpression → _ ● LogicalOperator _ ConditionalExpression}, from: 65
+8: {rp →  ● %rparen}, from: 66
+9: {LogicalOperator →  ● "AND"}, from: 66
+10: {LogicalOperator →  ● "OR"}, from: 66
+
+Chart: 67
+0: {LogicalOperator → "OR" ● }, from: 66
+1: {ChainableLogicalExpression → _ LogicalOperator ● _ ConditionalExpression}, from: 65
+2: {_ →  ● _$ebnf$1}, from: 67
+3: {_$ebnf$1 →  ● %_}, from: 67
+4: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 67
+
+Chart: 68
+0: {_$ebnf$1 → %_ ● }, from: 67
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 67
+2: {_ → _$ebnf$1 ● }, from: 67
+3: {ChainableLogicalExpression → _ LogicalOperator _ ● ConditionalExpression}, from: 65
+4: {ConditionalExpression →  ● LogicalExpression ConditionalExpression$ebnf$1}, from: 68
+5: {ConditionalExpression →  ● LogicalMissingExpression ConditionalExpression$ebnf$2}, from: 68
+6: {ConditionalExpression →  ● lp __ ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 68
+7: {LogicalExpression →  ● %identifier _ RelationalOperator _ %number}, from: 68
+8: {LogicalMissingExpression →  ● "IS_MISSING" lp %identifier rp}, from: 68
+9: {lp →  ● %lparen}, from: 68
+
+Chart: 69
+0: {LogicalExpression → %identifier ● _ RelationalOperator _ %number}, from: 68
+1: {_ →  ● _$ebnf$1}, from: 69
+2: {_$ebnf$1 →  ● %_}, from: 69
+3: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 69
+
+Chart: 70
+0: {_$ebnf$1 → %_ ● }, from: 69
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 69
+2: {_ → _$ebnf$1 ● }, from: 69
+3: {LogicalExpression → %identifier _ ● RelationalOperator _ %number}, from: 68
+4: {RelationalOperator →  ● %gteOperator}, from: 70
+5: {RelationalOperator →  ● %lteOperator}, from: 70
+6: {RelationalOperator →  ● %gtOperator}, from: 70
+7: {RelationalOperator →  ● %ltOperator}, from: 70
+8: {RelationalOperator →  ● %equalityOperator}, from: 70
+
+Chart: 71
+0: {RelationalOperator → %gtOperator ● }, from: 70
+1: {LogicalExpression → %identifier _ RelationalOperator ● _ %number}, from: 68
+2: {_ →  ● _$ebnf$1}, from: 71
+3: {_$ebnf$1 →  ● %_}, from: 71
+4: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 71
+
+Chart: 72
+0: {_$ebnf$1 → %_ ● }, from: 71
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 71
+2: {_ → _$ebnf$1 ● }, from: 71
+3: {LogicalExpression → %identifier _ RelationalOperator _ ● %number}, from: 68
+
+Chart: 73
+0: {LogicalExpression → %identifier _ RelationalOperator _ %number ● }, from: 68
+1: {ConditionalExpression → LogicalExpression ● ConditionalExpression$ebnf$1}, from: 68
+2: {ConditionalExpression$ebnf$1 →  ● ChainableLogicalExpression}, from: 73
+3: {ConditionalExpression$ebnf$1 →  ● }, from: 73
+4: {ChainableLogicalExpression →  ● _ LogicalOperator _ ConditionalExpression}, from: 73
+5: {ConditionalExpression → LogicalExpression ConditionalExpression$ebnf$1 ● }, from: 68
+6: {_ →  ● _$ebnf$1}, from: 73
+7: {ChainableLogicalExpression → _ LogicalOperator _ ConditionalExpression ● }, from: 65
+8: {_$ebnf$1 →  ● %_}, from: 73
+9: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 73
+10: {ConditionalExpression$ebnf$1 → ChainableLogicalExpression ● }, from: 65
+11: {ConditionalExpression → LogicalExpression ConditionalExpression$ebnf$1 ● }, from: 60
+12: {ChainableLogicalExpression → _ LogicalOperator _ ConditionalExpression ● }, from: 57
+13: {ConditionalExpression$ebnf$3 → ChainableLogicalExpression ● }, from: 57
+14: {ConditionalExpression → lp __ ConditionalExpression __ rp ConditionalExpression$ebnf$3 ● }, from: 3
+15: {Expression → lp __ ConditionalExpression ● __ rp}, from: 2
+16: {__ →  ● __$ebnf$1}, from: 73
+17: {__$ebnf$1 →  ● }, from: 73
+18: {__$ebnf$1 →  ● __$ebnf$1 %_}, from: 73
+19: {__ → __$ebnf$1 ● }, from: 73
+20: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 73
+21: {Expression → lp __ ConditionalExpression __ ● rp}, from: 2
+22: {rp →  ● %rparen}, from: 73
+
+Chart: 74
+0: {rp → %rparen ● }, from: 73
+1: {Expression → lp __ ConditionalExpression __ rp ● }, from: 2
+2: {IfStatement → "IF" _ Expression ● _ ReturnStatement ws}, from: 0
+3: {_ →  ● _$ebnf$1}, from: 74
+4: {_$ebnf$1 →  ● %_}, from: 74
+5: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 74
+
+Chart: 75
+0: {_$ebnf$1 → %_ ● }, from: 74
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 74
+2: {_ → _$ebnf$1 ● }, from: 74
+3: {IfStatement → "IF" _ Expression _ ● ReturnStatement ws}, from: 0
+4: {ReturnStatement →  ● "RETURN" _ %number}, from: 75
+
+Chart: 76
+0: {ReturnStatement → "RETURN" ● _ %number}, from: 75
+1: {_ →  ● _$ebnf$1}, from: 76
+2: {_$ebnf$1 →  ● %_}, from: 76
+3: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 76
+
+Chart: 77
+0: {_$ebnf$1 → %_ ● }, from: 76
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 76
+2: {_ → _$ebnf$1 ● }, from: 76
+3: {ReturnStatement → "RETURN" _ ● %number}, from: 75
+
+Chart: 78
+0: {ReturnStatement → "RETURN" _ %number ● }, from: 75
+1: {IfStatement → "IF" _ Expression _ ReturnStatement ● ws}, from: 0
+2: {ws →  ● ws$ebnf$1}, from: 78
+3: {ws$ebnf$1 →  ● ws$ebnf$1$subexpression$1}, from: 78
+4: {ws$ebnf$1 →  ● ws$ebnf$1 ws$ebnf$1$subexpression$2}, from: 78
+5: {ws$ebnf$1$subexpression$1 →  ● _}, from: 78
+6: {ws$ebnf$1$subexpression$1 →  ● nl}, from: 78
+7: {_ →  ● _$ebnf$1}, from: 78
+8: {nl →  ● %newline}, from: 78
+9: {_$ebnf$1 →  ● %_}, from: 78
+10: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 78
+
+Chart: 79
+0: {_$ebnf$1 → %_ ● }, from: 78
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 78
+2: {_ → _$ebnf$1 ● }, from: 78
+3: {ws$ebnf$1$subexpression$1 → _ ● }, from: 78
+4: {ws$ebnf$1 → ws$ebnf$1$subexpression$1 ● }, from: 78
+5: {ws$ebnf$1 → ws$ebnf$1 ● ws$ebnf$1$subexpression$2}, from: 78
+6: {ws → ws$ebnf$1 ● }, from: 78
+7: {ws$ebnf$1$subexpression$2 →  ● _}, from: 79
+8: {ws$ebnf$1$subexpression$2 →  ● nl}, from: 79
+9: {IfStatement → "IF" _ Expression _ ReturnStatement ws ● }, from: 0
+10: {_ →  ● _$ebnf$1}, from: 79
+11: {nl →  ● %newline}, from: 79
+12: {PrimaryExpression$ebnf$1$subexpression$1 → IfStatement ● }, from: 0
+13: {_$ebnf$1 →  ● %_}, from: 79
+14: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 79
+15: {PrimaryExpression$ebnf$1 → PrimaryExpression$ebnf$1$subexpression$1 ● }, from: 0
+16: {PrimaryExpression$ebnf$1 → PrimaryExpression$ebnf$1 ● PrimaryExpression$ebnf$1$subexpression$2}, from: 0
+17: {PrimaryExpression → PrimaryExpression$ebnf$1 ● ElseStatement}, from: 0
+18: {PrimaryExpression$ebnf$1$subexpression$2 →  ● IfStatement}, from: 79
+19: {ElseStatement →  ● "ELSE" _ ReturnStatement ElseStatement$ebnf$1}, from: 79
+20: {IfStatement →  ● "IF" _ Expression _ ReturnStatement ws}, from: 79
+
+Chart: 80
+0: {IfStatement → "IF" ● _ Expression _ ReturnStatement ws}, from: 79
+1: {_ →  ● _$ebnf$1}, from: 80
+2: {_$ebnf$1 →  ● %_}, from: 80
+3: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 80
+
+Chart: 81
+0: {_$ebnf$1 → %_ ● }, from: 80
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 80
+2: {_ → _$ebnf$1 ● }, from: 80
+3: {IfStatement → "IF" _ ● Expression _ ReturnStatement ws}, from: 79
+4: {Expression →  ● lp __ ConditionalExpression __ rp}, from: 81
+5: {lp →  ● %lparen}, from: 81
+
+Chart: 82
+0: {lp → %lparen ● }, from: 81
+1: {Expression → lp ● __ ConditionalExpression __ rp}, from: 81
+2: {__ →  ● __$ebnf$1}, from: 82
+3: {__$ebnf$1 →  ● }, from: 82
+4: {__$ebnf$1 →  ● __$ebnf$1 %_}, from: 82
+5: {__ → __$ebnf$1 ● }, from: 82
+6: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 82
+7: {Expression → lp __ ● ConditionalExpression __ rp}, from: 81
+8: {ConditionalExpression →  ● LogicalExpression ConditionalExpression$ebnf$1}, from: 82
+9: {ConditionalExpression →  ● LogicalMissingExpression ConditionalExpression$ebnf$2}, from: 82
+10: {ConditionalExpression →  ● lp __ ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 82
+11: {LogicalExpression →  ● %identifier _ RelationalOperator _ %number}, from: 82
+12: {LogicalMissingExpression →  ● "IS_MISSING" lp %identifier rp}, from: 82
+13: {lp →  ● %lparen}, from: 82
+
+Chart: 83
+0: {LogicalExpression → %identifier ● _ RelationalOperator _ %number}, from: 82
+1: {_ →  ● _$ebnf$1}, from: 83
+2: {_$ebnf$1 →  ● %_}, from: 83
+3: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 83
+
+Chart: 84
+0: {_$ebnf$1 → %_ ● }, from: 83
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 83
+2: {_ → _$ebnf$1 ● }, from: 83
+3: {LogicalExpression → %identifier _ ● RelationalOperator _ %number}, from: 82
+4: {RelationalOperator →  ● %gteOperator}, from: 84
+5: {RelationalOperator →  ● %lteOperator}, from: 84
+6: {RelationalOperator →  ● %gtOperator}, from: 84
+7: {RelationalOperator →  ● %ltOperator}, from: 84
+8: {RelationalOperator →  ● %equalityOperator}, from: 84
+
+Chart: 85
+0: {RelationalOperator → %gtOperator ● }, from: 84
+1: {LogicalExpression → %identifier _ RelationalOperator ● _ %number}, from: 82
+2: {_ →  ● _$ebnf$1}, from: 85
+3: {_$ebnf$1 →  ● %_}, from: 85
+4: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 85
+
+Chart: 86
+0: {_$ebnf$1 → %_ ● }, from: 85
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 85
+2: {_ → _$ebnf$1 ● }, from: 85
+3: {LogicalExpression → %identifier _ RelationalOperator _ ● %number}, from: 82
+
+Chart: 87
+0: {LogicalExpression → %identifier _ RelationalOperator _ %number ● }, from: 82
+1: {ConditionalExpression → LogicalExpression ● ConditionalExpression$ebnf$1}, from: 82
+2: {ConditionalExpression$ebnf$1 →  ● ChainableLogicalExpression}, from: 87
+3: {ConditionalExpression$ebnf$1 →  ● }, from: 87
+4: {ChainableLogicalExpression →  ● _ LogicalOperator _ ConditionalExpression}, from: 87
+5: {ConditionalExpression → LogicalExpression ConditionalExpression$ebnf$1 ● }, from: 82
+6: {_ →  ● _$ebnf$1}, from: 87
+7: {Expression → lp __ ConditionalExpression ● __ rp}, from: 81
+8: {_$ebnf$1 →  ● %_}, from: 87
+9: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 87
+10: {__ →  ● __$ebnf$1}, from: 87
+11: {__$ebnf$1 →  ● }, from: 87
+12: {__$ebnf$1 →  ● __$ebnf$1 %_}, from: 87
+13: {__ → __$ebnf$1 ● }, from: 87
+14: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 87
+15: {Expression → lp __ ConditionalExpression __ ● rp}, from: 81
+16: {rp →  ● %rparen}, from: 87
+
+Chart: 88
+0: {__$ebnf$1 → __$ebnf$1 %_ ● }, from: 87
+1: {_$ebnf$1 → %_ ● }, from: 87
+2: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 87
+3: {__ → __$ebnf$1 ● }, from: 87
+4: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 87
+5: {_ → _$ebnf$1 ● }, from: 87
+6: {Expression → lp __ ConditionalExpression __ ● rp}, from: 81
+7: {ChainableLogicalExpression → _ ● LogicalOperator _ ConditionalExpression}, from: 87
+8: {rp →  ● %rparen}, from: 88
+9: {LogicalOperator →  ● "AND"}, from: 88
+10: {LogicalOperator →  ● "OR"}, from: 88
+
+Chart: 89
+0: {LogicalOperator → "AND" ● }, from: 88
+1: {ChainableLogicalExpression → _ LogicalOperator ● _ ConditionalExpression}, from: 87
+2: {_ →  ● _$ebnf$1}, from: 89
+3: {_$ebnf$1 →  ● %_}, from: 89
+4: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 89
+
+Chart: 90
+0: {_$ebnf$1 → %_ ● }, from: 89
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 89
+2: {_ → _$ebnf$1 ● }, from: 89
+3: {ChainableLogicalExpression → _ LogicalOperator _ ● ConditionalExpression}, from: 87
+4: {ConditionalExpression →  ● LogicalExpression ConditionalExpression$ebnf$1}, from: 90
+5: {ConditionalExpression →  ● LogicalMissingExpression ConditionalExpression$ebnf$2}, from: 90
+6: {ConditionalExpression →  ● lp __ ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 90
+7: {LogicalExpression →  ● %identifier _ RelationalOperator _ %number}, from: 90
+8: {LogicalMissingExpression →  ● "IS_MISSING" lp %identifier rp}, from: 90
+9: {lp →  ● %lparen}, from: 90
+
+Chart: 91
+0: {LogicalExpression → %identifier ● _ RelationalOperator _ %number}, from: 90
+1: {_ →  ● _$ebnf$1}, from: 91
+2: {_$ebnf$1 →  ● %_}, from: 91
+3: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 91
+
+Chart: 92
+0: {_$ebnf$1 → %_ ● }, from: 91
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 91
+2: {_ → _$ebnf$1 ● }, from: 91
+3: {LogicalExpression → %identifier _ ● RelationalOperator _ %number}, from: 90
+4: {RelationalOperator →  ● %gteOperator}, from: 92
+5: {RelationalOperator →  ● %lteOperator}, from: 92
+6: {RelationalOperator →  ● %gtOperator}, from: 92
+7: {RelationalOperator →  ● %ltOperator}, from: 92
+8: {RelationalOperator →  ● %equalityOperator}, from: 92
+
+Chart: 93
+0: {RelationalOperator → %gtOperator ● }, from: 92
+1: {LogicalExpression → %identifier _ RelationalOperator ● _ %number}, from: 90
+2: {_ →  ● _$ebnf$1}, from: 93
+3: {_$ebnf$1 →  ● %_}, from: 93
+4: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 93
+
+Chart: 94
+0: {_$ebnf$1 → %_ ● }, from: 93
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 93
+2: {_ → _$ebnf$1 ● }, from: 93
+3: {LogicalExpression → %identifier _ RelationalOperator _ ● %number}, from: 90
+
+Chart: 95
+0: {LogicalExpression → %identifier _ RelationalOperator _ %number ● }, from: 90
+1: {ConditionalExpression → LogicalExpression ● ConditionalExpression$ebnf$1}, from: 90
+2: {ConditionalExpression$ebnf$1 →  ● ChainableLogicalExpression}, from: 95
+3: {ConditionalExpression$ebnf$1 →  ● }, from: 95
+4: {ChainableLogicalExpression →  ● _ LogicalOperator _ ConditionalExpression}, from: 95
+5: {ConditionalExpression → LogicalExpression ConditionalExpression$ebnf$1 ● }, from: 90
+6: {_ →  ● _$ebnf$1}, from: 95
+7: {ChainableLogicalExpression → _ LogicalOperator _ ConditionalExpression ● }, from: 87
+8: {_$ebnf$1 →  ● %_}, from: 95
+9: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 95
+10: {ConditionalExpression$ebnf$1 → ChainableLogicalExpression ● }, from: 87
+11: {ConditionalExpression → LogicalExpression ConditionalExpression$ebnf$1 ● }, from: 82
+12: {Expression → lp __ ConditionalExpression ● __ rp}, from: 81
+13: {__ →  ● __$ebnf$1}, from: 95
+14: {__$ebnf$1 →  ● }, from: 95
+15: {__$ebnf$1 →  ● __$ebnf$1 %_}, from: 95
+16: {__ → __$ebnf$1 ● }, from: 95
+17: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 95
+18: {Expression → lp __ ConditionalExpression __ ● rp}, from: 81
+19: {rp →  ● %rparen}, from: 95
+
+Chart: 96
+0: {__$ebnf$1 → __$ebnf$1 %_ ● }, from: 95
+1: {_$ebnf$1 → %_ ● }, from: 95
+2: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 95
+3: {__ → __$ebnf$1 ● }, from: 95
+4: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 95
+5: {_ → _$ebnf$1 ● }, from: 95
+6: {Expression → lp __ ConditionalExpression __ ● rp}, from: 81
+7: {ChainableLogicalExpression → _ ● LogicalOperator _ ConditionalExpression}, from: 95
+8: {rp →  ● %rparen}, from: 96
+9: {LogicalOperator →  ● "AND"}, from: 96
+10: {LogicalOperator →  ● "OR"}, from: 96
+
+Chart: 97
+0: {LogicalOperator → "OR" ● }, from: 96
+1: {ChainableLogicalExpression → _ LogicalOperator ● _ ConditionalExpression}, from: 95
+2: {_ →  ● _$ebnf$1}, from: 97
+3: {_$ebnf$1 →  ● %_}, from: 97
+4: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 97
+
+Chart: 98
+0: {_$ebnf$1 → %_ ● }, from: 97
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 97
+2: {_ → _$ebnf$1 ● }, from: 97
+3: {ChainableLogicalExpression → _ LogicalOperator _ ● ConditionalExpression}, from: 95
+4: {ConditionalExpression →  ● LogicalExpression ConditionalExpression$ebnf$1}, from: 98
+5: {ConditionalExpression →  ● LogicalMissingExpression ConditionalExpression$ebnf$2}, from: 98
+6: {ConditionalExpression →  ● lp __ ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 98
+7: {LogicalExpression →  ● %identifier _ RelationalOperator _ %number}, from: 98
+8: {LogicalMissingExpression →  ● "IS_MISSING" lp %identifier rp}, from: 98
+9: {lp →  ● %lparen}, from: 98
+
+Chart: 99
+0: {LogicalMissingExpression → "IS_MISSING" ● lp %identifier rp}, from: 98
+1: {lp →  ● %lparen}, from: 99
+
+Chart: 100
+0: {lp → %lparen ● }, from: 99
+1: {LogicalMissingExpression → "IS_MISSING" lp ● %identifier rp}, from: 98
+
+Chart: 101
+0: {LogicalMissingExpression → "IS_MISSING" lp %identifier ● rp}, from: 98
+1: {rp →  ● %rparen}, from: 101
+
+Chart: 102
+0: {rp → %rparen ● }, from: 101
+1: {LogicalMissingExpression → "IS_MISSING" lp %identifier rp ● }, from: 98
+2: {ConditionalExpression → LogicalMissingExpression ● ConditionalExpression$ebnf$2}, from: 98
+3: {ConditionalExpression$ebnf$2 →  ● ChainableLogicalExpression}, from: 102
+4: {ConditionalExpression$ebnf$2 →  ● }, from: 102
+5: {ChainableLogicalExpression →  ● _ LogicalOperator _ ConditionalExpression}, from: 102
+6: {ConditionalExpression → LogicalMissingExpression ConditionalExpression$ebnf$2 ● }, from: 98
+7: {_ →  ● _$ebnf$1}, from: 102
+8: {ChainableLogicalExpression → _ LogicalOperator _ ConditionalExpression ● }, from: 95
+9: {_$ebnf$1 →  ● %_}, from: 102
+10: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 102
+11: {ConditionalExpression$ebnf$1 → ChainableLogicalExpression ● }, from: 95
+12: {ConditionalExpression → LogicalExpression ConditionalExpression$ebnf$1 ● }, from: 90
+13: {ChainableLogicalExpression → _ LogicalOperator _ ConditionalExpression ● }, from: 87
+14: {ConditionalExpression$ebnf$1 → ChainableLogicalExpression ● }, from: 87
+15: {ConditionalExpression → LogicalExpression ConditionalExpression$ebnf$1 ● }, from: 82
+16: {Expression → lp __ ConditionalExpression ● __ rp}, from: 81
+17: {__ →  ● __$ebnf$1}, from: 102
+18: {__$ebnf$1 →  ● }, from: 102
+19: {__$ebnf$1 →  ● __$ebnf$1 %_}, from: 102
+20: {__ → __$ebnf$1 ● }, from: 102
+21: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 102
+22: {Expression → lp __ ConditionalExpression __ ● rp}, from: 81
+23: {rp →  ● %rparen}, from: 102
+
+Chart: 103
+0: {rp → %rparen ● }, from: 102
+1: {Expression → lp __ ConditionalExpression __ rp ● }, from: 81
+2: {IfStatement → "IF" _ Expression ● _ ReturnStatement ws}, from: 79
+3: {_ →  ● _$ebnf$1}, from: 103
+4: {_$ebnf$1 →  ● %_}, from: 103
+5: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 103
+
+Chart: 104
+0: {_$ebnf$1 → %_ ● }, from: 103
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 103
+2: {_ → _$ebnf$1 ● }, from: 103
+3: {IfStatement → "IF" _ Expression _ ● ReturnStatement ws}, from: 79
+4: {ReturnStatement →  ● "RETURN" _ %number}, from: 104
+
+Chart: 105
+0: {ReturnStatement → "RETURN" ● _ %number}, from: 104
+1: {_ →  ● _$ebnf$1}, from: 105
+2: {_$ebnf$1 →  ● %_}, from: 105
+3: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 105
+
+Chart: 106
+0: {_$ebnf$1 → %_ ● }, from: 105
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 105
+2: {_ → _$ebnf$1 ● }, from: 105
+3: {ReturnStatement → "RETURN" _ ● %number}, from: 104
+
+Chart: 107
+0: {ReturnStatement → "RETURN" _ %number ● }, from: 104
+1: {IfStatement → "IF" _ Expression _ ReturnStatement ● ws}, from: 79
+2: {ws →  ● ws$ebnf$1}, from: 107
+3: {ws$ebnf$1 →  ● ws$ebnf$1$subexpression$1}, from: 107
+4: {ws$ebnf$1 →  ● ws$ebnf$1 ws$ebnf$1$subexpression$2}, from: 107
+5: {ws$ebnf$1$subexpression$1 →  ● _}, from: 107
+6: {ws$ebnf$1$subexpression$1 →  ● nl}, from: 107
+7: {_ →  ● _$ebnf$1}, from: 107
+8: {nl →  ● %newline}, from: 107
+9: {_$ebnf$1 →  ● %_}, from: 107
+10: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 107
+
+Chart: 108
+0: {_$ebnf$1 → %_ ● }, from: 107
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 107
+2: {_ → _$ebnf$1 ● }, from: 107
+3: {ws$ebnf$1$subexpression$1 → _ ● }, from: 107
+4: {ws$ebnf$1 → ws$ebnf$1$subexpression$1 ● }, from: 107
+5: {ws$ebnf$1 → ws$ebnf$1 ● ws$ebnf$1$subexpression$2}, from: 107
+6: {ws → ws$ebnf$1 ● }, from: 107
+7: {ws$ebnf$1$subexpression$2 →  ● _}, from: 108
+8: {ws$ebnf$1$subexpression$2 →  ● nl}, from: 108
+9: {IfStatement → "IF" _ Expression _ ReturnStatement ws ● }, from: 79
+10: {_ →  ● _$ebnf$1}, from: 108
+11: {nl →  ● %newline}, from: 108
+12: {PrimaryExpression$ebnf$1$subexpression$2 → IfStatement ● }, from: 79
+13: {_$ebnf$1 →  ● %_}, from: 108
+14: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 108
+15: {PrimaryExpression$ebnf$1 → PrimaryExpression$ebnf$1 PrimaryExpression$ebnf$1$subexpression$2 ● }, from: 0
+16: {PrimaryExpression$ebnf$1 → PrimaryExpression$ebnf$1 ● PrimaryExpression$ebnf$1$subexpression$2}, from: 0
+17: {PrimaryExpression → PrimaryExpression$ebnf$1 ● ElseStatement}, from: 0
+18: {PrimaryExpression$ebnf$1$subexpression$2 →  ● IfStatement}, from: 108
+19: {ElseStatement →  ● "ELSE" _ ReturnStatement ElseStatement$ebnf$1}, from: 108
+20: {IfStatement →  ● "IF" _ Expression _ ReturnStatement ws}, from: 108
+
+Chart: 109
+0: {IfStatement → "IF" ● _ Expression _ ReturnStatement ws}, from: 108
+1: {_ →  ● _$ebnf$1}, from: 109
+2: {_$ebnf$1 →  ● %_}, from: 109
+3: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 109
+
+Chart: 110
+0: {_$ebnf$1 → %_ ● }, from: 109
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 109
+2: {_ → _$ebnf$1 ● }, from: 109
+3: {IfStatement → "IF" _ ● Expression _ ReturnStatement ws}, from: 108
+4: {Expression →  ● lp __ ConditionalExpression __ rp}, from: 110
+5: {lp →  ● %lparen}, from: 110
+
+Chart: 111
+0: {lp → %lparen ● }, from: 110
+1: {Expression → lp ● __ ConditionalExpression __ rp}, from: 110
+2: {__ →  ● __$ebnf$1}, from: 111
+3: {__$ebnf$1 →  ● }, from: 111
+4: {__$ebnf$1 →  ● __$ebnf$1 %_}, from: 111
+5: {__ → __$ebnf$1 ● }, from: 111
+6: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 111
+7: {Expression → lp __ ● ConditionalExpression __ rp}, from: 110
+8: {ConditionalExpression →  ● LogicalExpression ConditionalExpression$ebnf$1}, from: 111
+9: {ConditionalExpression →  ● LogicalMissingExpression ConditionalExpression$ebnf$2}, from: 111
+10: {ConditionalExpression →  ● lp __ ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 111
+11: {LogicalExpression →  ● %identifier _ RelationalOperator _ %number}, from: 111
+12: {LogicalMissingExpression →  ● "IS_MISSING" lp %identifier rp}, from: 111
+13: {lp →  ● %lparen}, from: 111
+
+Chart: 112
+0: {LogicalExpression → %identifier ● _ RelationalOperator _ %number}, from: 111
+1: {_ →  ● _$ebnf$1}, from: 112
+2: {_$ebnf$1 →  ● %_}, from: 112
+3: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 112
+
+Chart: 113
+0: {_$ebnf$1 → %_ ● }, from: 112
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 112
+2: {_ → _$ebnf$1 ● }, from: 112
+3: {LogicalExpression → %identifier _ ● RelationalOperator _ %number}, from: 111
+4: {RelationalOperator →  ● %gteOperator}, from: 113
+5: {RelationalOperator →  ● %lteOperator}, from: 113
+6: {RelationalOperator →  ● %gtOperator}, from: 113
+7: {RelationalOperator →  ● %ltOperator}, from: 113
+8: {RelationalOperator →  ● %equalityOperator}, from: 113
+
+Chart: 114
+0: {RelationalOperator → %gtOperator ● }, from: 113
+1: {LogicalExpression → %identifier _ RelationalOperator ● _ %number}, from: 111
+2: {_ →  ● _$ebnf$1}, from: 114
+3: {_$ebnf$1 →  ● %_}, from: 114
+4: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 114
+
+Chart: 115
+0: {_$ebnf$1 → %_ ● }, from: 114
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 114
+2: {_ → _$ebnf$1 ● }, from: 114
+3: {LogicalExpression → %identifier _ RelationalOperator _ ● %number}, from: 111
+
+Chart: 116
+0: {LogicalExpression → %identifier _ RelationalOperator _ %number ● }, from: 111
+1: {ConditionalExpression → LogicalExpression ● ConditionalExpression$ebnf$1}, from: 111
+2: {ConditionalExpression$ebnf$1 →  ● ChainableLogicalExpression}, from: 116
+3: {ConditionalExpression$ebnf$1 →  ● }, from: 116
+4: {ChainableLogicalExpression →  ● _ LogicalOperator _ ConditionalExpression}, from: 116
+5: {ConditionalExpression → LogicalExpression ConditionalExpression$ebnf$1 ● }, from: 111
+6: {_ →  ● _$ebnf$1}, from: 116
+7: {Expression → lp __ ConditionalExpression ● __ rp}, from: 110
+8: {_$ebnf$1 →  ● %_}, from: 116
+9: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 116
+10: {__ →  ● __$ebnf$1}, from: 116
+11: {__$ebnf$1 →  ● }, from: 116
+12: {__$ebnf$1 →  ● __$ebnf$1 %_}, from: 116
+13: {__ → __$ebnf$1 ● }, from: 116
+14: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 116
+15: {Expression → lp __ ConditionalExpression __ ● rp}, from: 110
+16: {rp →  ● %rparen}, from: 116
+
+Chart: 117
+0: {rp → %rparen ● }, from: 116
+1: {Expression → lp __ ConditionalExpression __ rp ● }, from: 110
+2: {IfStatement → "IF" _ Expression ● _ ReturnStatement ws}, from: 108
+3: {_ →  ● _$ebnf$1}, from: 117
+4: {_$ebnf$1 →  ● %_}, from: 117
+5: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 117
+
+Chart: 118
+0: {_$ebnf$1 → %_ ● }, from: 117
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 117
+2: {_ → _$ebnf$1 ● }, from: 117
+3: {IfStatement → "IF" _ Expression _ ● ReturnStatement ws}, from: 108
+4: {ReturnStatement →  ● "RETURN" _ %number}, from: 118
+
+Chart: 119
+0: {ReturnStatement → "RETURN" ● _ %number}, from: 118
+1: {_ →  ● _$ebnf$1}, from: 119
+2: {_$ebnf$1 →  ● %_}, from: 119
+3: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 119
+
+Chart: 120
+0: {_$ebnf$1 → %_ ● }, from: 119
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 119
+2: {_ → _$ebnf$1 ● }, from: 119
+3: {ReturnStatement → "RETURN" _ ● %number}, from: 118
+
+Chart: 121
+0: {ReturnStatement → "RETURN" _ %number ● }, from: 118
+1: {IfStatement → "IF" _ Expression _ ReturnStatement ● ws}, from: 108
+2: {ws →  ● ws$ebnf$1}, from: 121
+3: {ws$ebnf$1 →  ● ws$ebnf$1$subexpression$1}, from: 121
+4: {ws$ebnf$1 →  ● ws$ebnf$1 ws$ebnf$1$subexpression$2}, from: 121
+5: {ws$ebnf$1$subexpression$1 →  ● _}, from: 121
+6: {ws$ebnf$1$subexpression$1 →  ● nl}, from: 121
+7: {_ →  ● _$ebnf$1}, from: 121
+8: {nl →  ● %newline}, from: 121
+9: {_$ebnf$1 →  ● %_}, from: 121
+10: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 121
+
+Chart: 122
+0: {_$ebnf$1 → %_ ● }, from: 121
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 121
+2: {_ → _$ebnf$1 ● }, from: 121
+3: {ws$ebnf$1$subexpression$1 → _ ● }, from: 121
+4: {ws$ebnf$1 → ws$ebnf$1$subexpression$1 ● }, from: 121
+5: {ws$ebnf$1 → ws$ebnf$1 ● ws$ebnf$1$subexpression$2}, from: 121
+6: {ws → ws$ebnf$1 ● }, from: 121
+7: {ws$ebnf$1$subexpression$2 →  ● _}, from: 122
+8: {ws$ebnf$1$subexpression$2 →  ● nl}, from: 122
+9: {IfStatement → "IF" _ Expression _ ReturnStatement ws ● }, from: 108
+10: {_ →  ● _$ebnf$1}, from: 122
+11: {nl →  ● %newline}, from: 122
+12: {PrimaryExpression$ebnf$1$subexpression$2 → IfStatement ● }, from: 108
+13: {_$ebnf$1 →  ● %_}, from: 122
+14: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 122
+15: {PrimaryExpression$ebnf$1 → PrimaryExpression$ebnf$1 PrimaryExpression$ebnf$1$subexpression$2 ● }, from: 0
+16: {PrimaryExpression$ebnf$1 → PrimaryExpression$ebnf$1 ● PrimaryExpression$ebnf$1$subexpression$2}, from: 0
+17: {PrimaryExpression → PrimaryExpression$ebnf$1 ● ElseStatement}, from: 0
+18: {PrimaryExpression$ebnf$1$subexpression$2 →  ● IfStatement}, from: 122
+19: {ElseStatement →  ● "ELSE" _ ReturnStatement ElseStatement$ebnf$1}, from: 122
+20: {IfStatement →  ● "IF" _ Expression _ ReturnStatement ws}, from: 122
+
+Chart: 123
+0: {IfStatement → "IF" ● _ Expression _ ReturnStatement ws}, from: 122
+1: {_ →  ● _$ebnf$1}, from: 123
+2: {_$ebnf$1 →  ● %_}, from: 123
+3: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 123
+
+Chart: 124
+0: {_$ebnf$1 → %_ ● }, from: 123
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 123
+2: {_ → _$ebnf$1 ● }, from: 123
+3: {IfStatement → "IF" _ ● Expression _ ReturnStatement ws}, from: 122
+4: {Expression →  ● lp __ ConditionalExpression __ rp}, from: 124
+5: {lp →  ● %lparen}, from: 124
+
+Chart: 125
+0: {lp → %lparen ● }, from: 124
+1: {Expression → lp ● __ ConditionalExpression __ rp}, from: 124
+2: {__ →  ● __$ebnf$1}, from: 125
+3: {__$ebnf$1 →  ● }, from: 125
+4: {__$ebnf$1 →  ● __$ebnf$1 %_}, from: 125
+5: {__ → __$ebnf$1 ● }, from: 125
+6: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 125
+7: {Expression → lp __ ● ConditionalExpression __ rp}, from: 124
+8: {ConditionalExpression →  ● LogicalExpression ConditionalExpression$ebnf$1}, from: 125
+9: {ConditionalExpression →  ● LogicalMissingExpression ConditionalExpression$ebnf$2}, from: 125
+10: {ConditionalExpression →  ● lp __ ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 125
+11: {LogicalExpression →  ● %identifier _ RelationalOperator _ %number}, from: 125
+12: {LogicalMissingExpression →  ● "IS_MISSING" lp %identifier rp}, from: 125
+13: {lp →  ● %lparen}, from: 125
+
+Chart: 126
+0: {lp → %lparen ● }, from: 125
+1: {ConditionalExpression → lp ● __ ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 125
+2: {__ →  ● __$ebnf$1}, from: 126
+3: {__$ebnf$1 →  ● }, from: 126
+4: {__$ebnf$1 →  ● __$ebnf$1 %_}, from: 126
+5: {__ → __$ebnf$1 ● }, from: 126
+6: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 126
+7: {ConditionalExpression → lp __ ● ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 125
+8: {ConditionalExpression →  ● LogicalExpression ConditionalExpression$ebnf$1}, from: 126
+9: {ConditionalExpression →  ● LogicalMissingExpression ConditionalExpression$ebnf$2}, from: 126
+10: {ConditionalExpression →  ● lp __ ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 126
+11: {LogicalExpression →  ● %identifier _ RelationalOperator _ %number}, from: 126
+12: {LogicalMissingExpression →  ● "IS_MISSING" lp %identifier rp}, from: 126
+13: {lp →  ● %lparen}, from: 126
+
+Chart: 127
+0: {lp → %lparen ● }, from: 126
+1: {ConditionalExpression → lp ● __ ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 126
+2: {__ →  ● __$ebnf$1}, from: 127
+3: {__$ebnf$1 →  ● }, from: 127
+4: {__$ebnf$1 →  ● __$ebnf$1 %_}, from: 127
+5: {__ → __$ebnf$1 ● }, from: 127
+6: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 127
+7: {ConditionalExpression → lp __ ● ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 126
+8: {ConditionalExpression →  ● LogicalExpression ConditionalExpression$ebnf$1}, from: 127
+9: {ConditionalExpression →  ● LogicalMissingExpression ConditionalExpression$ebnf$2}, from: 127
+10: {ConditionalExpression →  ● lp __ ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 127
+11: {LogicalExpression →  ● %identifier _ RelationalOperator _ %number}, from: 127
+12: {LogicalMissingExpression →  ● "IS_MISSING" lp %identifier rp}, from: 127
+13: {lp →  ● %lparen}, from: 127
+
+Chart: 128
+0: {LogicalExpression → %identifier ● _ RelationalOperator _ %number}, from: 127
+1: {_ →  ● _$ebnf$1}, from: 128
+2: {_$ebnf$1 →  ● %_}, from: 128
+3: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 128
+
+Chart: 129
+0: {_$ebnf$1 → %_ ● }, from: 128
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 128
+2: {_ → _$ebnf$1 ● }, from: 128
+3: {LogicalExpression → %identifier _ ● RelationalOperator _ %number}, from: 127
+4: {RelationalOperator →  ● %gteOperator}, from: 129
+5: {RelationalOperator →  ● %lteOperator}, from: 129
+6: {RelationalOperator →  ● %gtOperator}, from: 129
+7: {RelationalOperator →  ● %ltOperator}, from: 129
+8: {RelationalOperator →  ● %equalityOperator}, from: 129
+
+Chart: 130
+0: {RelationalOperator → %gtOperator ● }, from: 129
+1: {LogicalExpression → %identifier _ RelationalOperator ● _ %number}, from: 127
+2: {_ →  ● _$ebnf$1}, from: 130
+3: {_$ebnf$1 →  ● %_}, from: 130
+4: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 130
+
+Chart: 131
+0: {_$ebnf$1 → %_ ● }, from: 130
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 130
+2: {_ → _$ebnf$1 ● }, from: 130
+3: {LogicalExpression → %identifier _ RelationalOperator _ ● %number}, from: 127
+
+Chart: 132
+0: {LogicalExpression → %identifier _ RelationalOperator _ %number ● }, from: 127
+1: {ConditionalExpression → LogicalExpression ● ConditionalExpression$ebnf$1}, from: 127
+2: {ConditionalExpression$ebnf$1 →  ● ChainableLogicalExpression}, from: 132
+3: {ConditionalExpression$ebnf$1 →  ● }, from: 132
+4: {ChainableLogicalExpression →  ● _ LogicalOperator _ ConditionalExpression}, from: 132
+5: {ConditionalExpression → LogicalExpression ConditionalExpression$ebnf$1 ● }, from: 127
+6: {_ →  ● _$ebnf$1}, from: 132
+7: {ConditionalExpression → lp __ ConditionalExpression ● __ rp ConditionalExpression$ebnf$3}, from: 126
+8: {_$ebnf$1 →  ● %_}, from: 132
+9: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 132
+10: {__ →  ● __$ebnf$1}, from: 132
+11: {__$ebnf$1 →  ● }, from: 132
+12: {__$ebnf$1 →  ● __$ebnf$1 %_}, from: 132
+13: {__ → __$ebnf$1 ● }, from: 132
+14: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 132
+15: {ConditionalExpression → lp __ ConditionalExpression __ ● rp ConditionalExpression$ebnf$3}, from: 126
+16: {rp →  ● %rparen}, from: 132
+
+Chart: 133
+0: {rp → %rparen ● }, from: 132
+1: {ConditionalExpression → lp __ ConditionalExpression __ rp ● ConditionalExpression$ebnf$3}, from: 126
+2: {ConditionalExpression$ebnf$3 →  ● ChainableLogicalExpression}, from: 133
+3: {ConditionalExpression$ebnf$3 →  ● }, from: 133
+4: {ChainableLogicalExpression →  ● _ LogicalOperator _ ConditionalExpression}, from: 133
+5: {ConditionalExpression → lp __ ConditionalExpression __ rp ConditionalExpression$ebnf$3 ● }, from: 126
+6: {_ →  ● _$ebnf$1}, from: 133
+7: {ConditionalExpression → lp __ ConditionalExpression ● __ rp ConditionalExpression$ebnf$3}, from: 125
+8: {_$ebnf$1 →  ● %_}, from: 133
+9: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 133
+10: {__ →  ● __$ebnf$1}, from: 133
+11: {__$ebnf$1 →  ● }, from: 133
+12: {__$ebnf$1 →  ● __$ebnf$1 %_}, from: 133
+13: {__ → __$ebnf$1 ● }, from: 133
+14: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 133
+15: {ConditionalExpression → lp __ ConditionalExpression __ ● rp ConditionalExpression$ebnf$3}, from: 125
+16: {rp →  ● %rparen}, from: 133
+
+Chart: 134
+0: {rp → %rparen ● }, from: 133
+1: {ConditionalExpression → lp __ ConditionalExpression __ rp ● ConditionalExpression$ebnf$3}, from: 125
+2: {ConditionalExpression$ebnf$3 →  ● ChainableLogicalExpression}, from: 134
+3: {ConditionalExpression$ebnf$3 →  ● }, from: 134
+4: {ChainableLogicalExpression →  ● _ LogicalOperator _ ConditionalExpression}, from: 134
+5: {ConditionalExpression → lp __ ConditionalExpression __ rp ConditionalExpression$ebnf$3 ● }, from: 125
+6: {_ →  ● _$ebnf$1}, from: 134
+7: {Expression → lp __ ConditionalExpression ● __ rp}, from: 124
+8: {_$ebnf$1 →  ● %_}, from: 134
+9: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 134
+10: {__ →  ● __$ebnf$1}, from: 134
+11: {__$ebnf$1 →  ● }, from: 134
+12: {__$ebnf$1 →  ● __$ebnf$1 %_}, from: 134
+13: {__ → __$ebnf$1 ● }, from: 134
+14: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 134
+15: {Expression → lp __ ConditionalExpression __ ● rp}, from: 124
+16: {rp →  ● %rparen}, from: 134
+
+Chart: 135
+0: {__$ebnf$1 → __$ebnf$1 %_ ● }, from: 134
+1: {_$ebnf$1 → %_ ● }, from: 134
+2: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 134
+3: {__ → __$ebnf$1 ● }, from: 134
+4: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 134
+5: {_ → _$ebnf$1 ● }, from: 134
+6: {Expression → lp __ ConditionalExpression __ ● rp}, from: 124
+7: {ChainableLogicalExpression → _ ● LogicalOperator _ ConditionalExpression}, from: 134
+8: {rp →  ● %rparen}, from: 135
+9: {LogicalOperator →  ● "AND"}, from: 135
+10: {LogicalOperator →  ● "OR"}, from: 135
+
+Chart: 136
+0: {LogicalOperator → "AND" ● }, from: 135
+1: {ChainableLogicalExpression → _ LogicalOperator ● _ ConditionalExpression}, from: 134
+2: {_ →  ● _$ebnf$1}, from: 136
+3: {_$ebnf$1 →  ● %_}, from: 136
+4: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 136
+
+Chart: 137
+0: {_$ebnf$1 → %_ ● }, from: 136
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 136
+2: {_ → _$ebnf$1 ● }, from: 136
+3: {ChainableLogicalExpression → _ LogicalOperator _ ● ConditionalExpression}, from: 134
+4: {ConditionalExpression →  ● LogicalExpression ConditionalExpression$ebnf$1}, from: 137
+5: {ConditionalExpression →  ● LogicalMissingExpression ConditionalExpression$ebnf$2}, from: 137
+6: {ConditionalExpression →  ● lp __ ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 137
+7: {LogicalExpression →  ● %identifier _ RelationalOperator _ %number}, from: 137
+8: {LogicalMissingExpression →  ● "IS_MISSING" lp %identifier rp}, from: 137
+9: {lp →  ● %lparen}, from: 137
+
+Chart: 138
+0: {LogicalExpression → %identifier ● _ RelationalOperator _ %number}, from: 137
+1: {_ →  ● _$ebnf$1}, from: 138
+2: {_$ebnf$1 →  ● %_}, from: 138
+3: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 138
+
+Chart: 139
+0: {_$ebnf$1 → %_ ● }, from: 138
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 138
+2: {_ → _$ebnf$1 ● }, from: 138
+3: {LogicalExpression → %identifier _ ● RelationalOperator _ %number}, from: 137
+4: {RelationalOperator →  ● %gteOperator}, from: 139
+5: {RelationalOperator →  ● %lteOperator}, from: 139
+6: {RelationalOperator →  ● %gtOperator}, from: 139
+7: {RelationalOperator →  ● %ltOperator}, from: 139
+8: {RelationalOperator →  ● %equalityOperator}, from: 139
+
+Chart: 140
+0: {RelationalOperator → %gtOperator ● }, from: 139
+1: {LogicalExpression → %identifier _ RelationalOperator ● _ %number}, from: 137
+2: {_ →  ● _$ebnf$1}, from: 140
+3: {_$ebnf$1 →  ● %_}, from: 140
+4: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 140
+
+Chart: 141
+0: {_$ebnf$1 → %_ ● }, from: 140
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 140
+2: {_ → _$ebnf$1 ● }, from: 140
+3: {LogicalExpression → %identifier _ RelationalOperator _ ● %number}, from: 137
+
+Chart: 142
+0: {LogicalExpression → %identifier _ RelationalOperator _ %number ● }, from: 137
+1: {ConditionalExpression → LogicalExpression ● ConditionalExpression$ebnf$1}, from: 137
+2: {ConditionalExpression$ebnf$1 →  ● ChainableLogicalExpression}, from: 142
+3: {ConditionalExpression$ebnf$1 →  ● }, from: 142
+4: {ChainableLogicalExpression →  ● _ LogicalOperator _ ConditionalExpression}, from: 142
+5: {ConditionalExpression → LogicalExpression ConditionalExpression$ebnf$1 ● }, from: 137
+6: {_ →  ● _$ebnf$1}, from: 142
+7: {ChainableLogicalExpression → _ LogicalOperator _ ConditionalExpression ● }, from: 134
+8: {_$ebnf$1 →  ● %_}, from: 142
+9: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 142
+10: {ConditionalExpression$ebnf$3 → ChainableLogicalExpression ● }, from: 134
+11: {ConditionalExpression → lp __ ConditionalExpression __ rp ConditionalExpression$ebnf$3 ● }, from: 125
+12: {Expression → lp __ ConditionalExpression ● __ rp}, from: 124
+13: {__ →  ● __$ebnf$1}, from: 142
+14: {__$ebnf$1 →  ● }, from: 142
+15: {__$ebnf$1 →  ● __$ebnf$1 %_}, from: 142
+16: {__ → __$ebnf$1 ● }, from: 142
+17: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 142
+18: {Expression → lp __ ConditionalExpression __ ● rp}, from: 124
+19: {rp →  ● %rparen}, from: 142
+
+Chart: 143
+0: {rp → %rparen ● }, from: 142
+1: {Expression → lp __ ConditionalExpression __ rp ● }, from: 124
+2: {IfStatement → "IF" _ Expression ● _ ReturnStatement ws}, from: 122
+3: {_ →  ● _$ebnf$1}, from: 143
+4: {_$ebnf$1 →  ● %_}, from: 143
+5: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 143
+
+Chart: 144
+0: {_$ebnf$1 → %_ ● }, from: 143
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 143
+2: {_ → _$ebnf$1 ● }, from: 143
+3: {IfStatement → "IF" _ Expression _ ● ReturnStatement ws}, from: 122
+4: {ReturnStatement →  ● "RETURN" _ %number}, from: 144
+
+Chart: 145
+0: {ReturnStatement → "RETURN" ● _ %number}, from: 144
+1: {_ →  ● _$ebnf$1}, from: 145
+2: {_$ebnf$1 →  ● %_}, from: 145
+3: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 145
+
+Chart: 146
+0: {_$ebnf$1 → %_ ● }, from: 145
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 145
+2: {_ → _$ebnf$1 ● }, from: 145
+3: {ReturnStatement → "RETURN" _ ● %number}, from: 144
+
+Chart: 147
+0: {ReturnStatement → "RETURN" _ %number ● }, from: 144
+1: {IfStatement → "IF" _ Expression _ ReturnStatement ● ws}, from: 122
+2: {ws →  ● ws$ebnf$1}, from: 147
+3: {ws$ebnf$1 →  ● ws$ebnf$1$subexpression$1}, from: 147
+4: {ws$ebnf$1 →  ● ws$ebnf$1 ws$ebnf$1$subexpression$2}, from: 147
+5: {ws$ebnf$1$subexpression$1 →  ● _}, from: 147
+6: {ws$ebnf$1$subexpression$1 →  ● nl}, from: 147
+7: {_ →  ● _$ebnf$1}, from: 147
+8: {nl →  ● %newline}, from: 147
+9: {_$ebnf$1 →  ● %_}, from: 147
+10: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 147
+
+Chart: 148
+0: {_$ebnf$1 → %_ ● }, from: 147
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 147
+2: {_ → _$ebnf$1 ● }, from: 147
+3: {ws$ebnf$1$subexpression$1 → _ ● }, from: 147
+4: {ws$ebnf$1 → ws$ebnf$1$subexpression$1 ● }, from: 147
+5: {ws$ebnf$1 → ws$ebnf$1 ● ws$ebnf$1$subexpression$2}, from: 147
+6: {ws → ws$ebnf$1 ● }, from: 147
+7: {ws$ebnf$1$subexpression$2 →  ● _}, from: 148
+8: {ws$ebnf$1$subexpression$2 →  ● nl}, from: 148
+9: {IfStatement → "IF" _ Expression _ ReturnStatement ws ● }, from: 122
+10: {_ →  ● _$ebnf$1}, from: 148
+11: {nl →  ● %newline}, from: 148
+12: {PrimaryExpression$ebnf$1$subexpression$2 → IfStatement ● }, from: 122
+13: {_$ebnf$1 →  ● %_}, from: 148
+14: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 148
+15: {PrimaryExpression$ebnf$1 → PrimaryExpression$ebnf$1 PrimaryExpression$ebnf$1$subexpression$2 ● }, from: 0
+16: {PrimaryExpression$ebnf$1 → PrimaryExpression$ebnf$1 ● PrimaryExpression$ebnf$1$subexpression$2}, from: 0
+17: {PrimaryExpression → PrimaryExpression$ebnf$1 ● ElseStatement}, from: 0
+18: {PrimaryExpression$ebnf$1$subexpression$2 →  ● IfStatement}, from: 148
+19: {ElseStatement →  ● "ELSE" _ ReturnStatement ElseStatement$ebnf$1}, from: 148
+20: {IfStatement →  ● "IF" _ Expression _ ReturnStatement ws}, from: 148
+
+Chart: 149
+0: {IfStatement → "IF" ● _ Expression _ ReturnStatement ws}, from: 148
+1: {_ →  ● _$ebnf$1}, from: 149
+2: {_$ebnf$1 →  ● %_}, from: 149
+3: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 149
+
+Chart: 150
+0: {_$ebnf$1 → %_ ● }, from: 149
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 149
+2: {_ → _$ebnf$1 ● }, from: 149
+3: {IfStatement → "IF" _ ● Expression _ ReturnStatement ws}, from: 148
+4: {Expression →  ● lp __ ConditionalExpression __ rp}, from: 150
+5: {lp →  ● %lparen}, from: 150
+
+Chart: 151
+0: {lp → %lparen ● }, from: 150
+1: {Expression → lp ● __ ConditionalExpression __ rp}, from: 150
+2: {__ →  ● __$ebnf$1}, from: 151
+3: {__$ebnf$1 →  ● }, from: 151
+4: {__$ebnf$1 →  ● __$ebnf$1 %_}, from: 151
+5: {__ → __$ebnf$1 ● }, from: 151
+6: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 151
+7: {Expression → lp __ ● ConditionalExpression __ rp}, from: 150
+8: {ConditionalExpression →  ● LogicalExpression ConditionalExpression$ebnf$1}, from: 151
+9: {ConditionalExpression →  ● LogicalMissingExpression ConditionalExpression$ebnf$2}, from: 151
+10: {ConditionalExpression →  ● lp __ ConditionalExpression __ rp ConditionalExpression$ebnf$3}, from: 151
+11: {LogicalExpression →  ● %identifier _ RelationalOperator _ %number}, from: 151
+12: {LogicalMissingExpression →  ● "IS_MISSING" lp %identifier rp}, from: 151
+13: {lp →  ● %lparen}, from: 151
+
+Chart: 152
+0: {LogicalMissingExpression → "IS_MISSING" ● lp %identifier rp}, from: 151
+1: {lp →  ● %lparen}, from: 152
+
+Chart: 153
+0: {lp → %lparen ● }, from: 152
+1: {LogicalMissingExpression → "IS_MISSING" lp ● %identifier rp}, from: 151
+
+Chart: 154
+0: {LogicalMissingExpression → "IS_MISSING" lp %identifier ● rp}, from: 151
+1: {rp →  ● %rparen}, from: 154
+
+Chart: 155
+0: {rp → %rparen ● }, from: 154
+1: {LogicalMissingExpression → "IS_MISSING" lp %identifier rp ● }, from: 151
+2: {ConditionalExpression → LogicalMissingExpression ● ConditionalExpression$ebnf$2}, from: 151
+3: {ConditionalExpression$ebnf$2 →  ● ChainableLogicalExpression}, from: 155
+4: {ConditionalExpression$ebnf$2 →  ● }, from: 155
+5: {ChainableLogicalExpression →  ● _ LogicalOperator _ ConditionalExpression}, from: 155
+6: {ConditionalExpression → LogicalMissingExpression ConditionalExpression$ebnf$2 ● }, from: 151
+7: {_ →  ● _$ebnf$1}, from: 155
+8: {Expression → lp __ ConditionalExpression ● __ rp}, from: 150
+9: {_$ebnf$1 →  ● %_}, from: 155
+10: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 155
+11: {__ →  ● __$ebnf$1}, from: 155
+12: {__$ebnf$1 →  ● }, from: 155
+13: {__$ebnf$1 →  ● __$ebnf$1 %_}, from: 155
+14: {__ → __$ebnf$1 ● }, from: 155
+15: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 155
+16: {Expression → lp __ ConditionalExpression __ ● rp}, from: 150
+17: {rp →  ● %rparen}, from: 155
+
+Chart: 156
+0: {rp → %rparen ● }, from: 155
+1: {Expression → lp __ ConditionalExpression __ rp ● }, from: 150
+2: {IfStatement → "IF" _ Expression ● _ ReturnStatement ws}, from: 148
+3: {_ →  ● _$ebnf$1}, from: 156
+4: {_$ebnf$1 →  ● %_}, from: 156
+5: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 156
+
+Chart: 157
+0: {_$ebnf$1 → %_ ● }, from: 156
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 156
+2: {_ → _$ebnf$1 ● }, from: 156
+3: {IfStatement → "IF" _ Expression _ ● ReturnStatement ws}, from: 148
+4: {ReturnStatement →  ● "RETURN" _ %number}, from: 157
+
+Chart: 158
+0: {ReturnStatement → "RETURN" ● _ %number}, from: 157
+1: {_ →  ● _$ebnf$1}, from: 158
+2: {_$ebnf$1 →  ● %_}, from: 158
+3: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 158
+
+Chart: 159
+0: {_$ebnf$1 → %_ ● }, from: 158
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 158
+2: {_ → _$ebnf$1 ● }, from: 158
+3: {ReturnStatement → "RETURN" _ ● %number}, from: 157
+
+Chart: 160
+0: {ReturnStatement → "RETURN" _ %number ● }, from: 157
+1: {IfStatement → "IF" _ Expression _ ReturnStatement ● ws}, from: 148
+2: {ws →  ● ws$ebnf$1}, from: 160
+3: {ws$ebnf$1 →  ● ws$ebnf$1$subexpression$1}, from: 160
+4: {ws$ebnf$1 →  ● ws$ebnf$1 ws$ebnf$1$subexpression$2}, from: 160
+5: {ws$ebnf$1$subexpression$1 →  ● _}, from: 160
+6: {ws$ebnf$1$subexpression$1 →  ● nl}, from: 160
+7: {_ →  ● _$ebnf$1}, from: 160
+8: {nl →  ● %newline}, from: 160
+9: {_$ebnf$1 →  ● %_}, from: 160
+10: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 160
+
+Chart: 161
+0: {_$ebnf$1 → %_ ● }, from: 160
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 160
+2: {_ → _$ebnf$1 ● }, from: 160
+3: {ws$ebnf$1$subexpression$1 → _ ● }, from: 160
+4: {ws$ebnf$1 → ws$ebnf$1$subexpression$1 ● }, from: 160
+5: {ws$ebnf$1 → ws$ebnf$1 ● ws$ebnf$1$subexpression$2}, from: 160
+6: {ws → ws$ebnf$1 ● }, from: 160
+7: {ws$ebnf$1$subexpression$2 →  ● _}, from: 161
+8: {ws$ebnf$1$subexpression$2 →  ● nl}, from: 161
+9: {IfStatement → "IF" _ Expression _ ReturnStatement ws ● }, from: 148
+10: {_ →  ● _$ebnf$1}, from: 161
+11: {nl →  ● %newline}, from: 161
+12: {PrimaryExpression$ebnf$1$subexpression$2 → IfStatement ● }, from: 148
+13: {_$ebnf$1 →  ● %_}, from: 161
+14: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 161
+15: {PrimaryExpression$ebnf$1 → PrimaryExpression$ebnf$1 PrimaryExpression$ebnf$1$subexpression$2 ● }, from: 0
+16: {PrimaryExpression$ebnf$1 → PrimaryExpression$ebnf$1 ● PrimaryExpression$ebnf$1$subexpression$2}, from: 0
+17: {PrimaryExpression → PrimaryExpression$ebnf$1 ● ElseStatement}, from: 0
+18: {PrimaryExpression$ebnf$1$subexpression$2 →  ● IfStatement}, from: 161
+19: {ElseStatement →  ● "ELSE" _ ReturnStatement ElseStatement$ebnf$1}, from: 161
+20: {IfStatement →  ● "IF" _ Expression _ ReturnStatement ws}, from: 161
+
+Chart: 162
+0: {ElseStatement → "ELSE" ● _ ReturnStatement ElseStatement$ebnf$1}, from: 161
+1: {_ →  ● _$ebnf$1}, from: 162
+2: {_$ebnf$1 →  ● %_}, from: 162
+3: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 162
+
+Chart: 163
+0: {_$ebnf$1 → %_ ● }, from: 162
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 162
+2: {_ → _$ebnf$1 ● }, from: 162
+3: {ElseStatement → "ELSE" _ ● ReturnStatement ElseStatement$ebnf$1}, from: 161
+4: {ReturnStatement →  ● "RETURN" _ %number}, from: 163
+
+Chart: 164
+0: {ReturnStatement → "RETURN" ● _ %number}, from: 163
+1: {_ →  ● _$ebnf$1}, from: 164
+2: {_$ebnf$1 →  ● %_}, from: 164
+3: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 164
+
+Chart: 165
+0: {_$ebnf$1 → %_ ● }, from: 164
+1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 164
+2: {_ → _$ebnf$1 ● }, from: 164
+3: {ReturnStatement → "RETURN" _ ● %number}, from: 163
+
+Chart: 166
+0: {ReturnStatement → "RETURN" _ %number ● }, from: 163
+1: {ElseStatement → "ELSE" _ ReturnStatement ● ElseStatement$ebnf$1}, from: 161
+2: {ElseStatement$ebnf$1 →  ● ws}, from: 166
+3: {ElseStatement$ebnf$1 →  ● }, from: 166
+4: {ws →  ● ws$ebnf$1}, from: 166
+5: {ElseStatement → "ELSE" _ ReturnStatement ElseStatement$ebnf$1 ● }, from: 161
+6: {ws$ebnf$1 →  ● ws$ebnf$1$subexpression$1}, from: 166
+7: {ws$ebnf$1 →  ● ws$ebnf$1 ws$ebnf$1$subexpression$2}, from: 166
+8: {PrimaryExpression → PrimaryExpression$ebnf$1 ElseStatement ● }, from: 0
+9: {ws$ebnf$1$subexpression$1 →  ● _}, from: 166
+10: {ws$ebnf$1$subexpression$1 →  ● nl}, from: 166
+11: {_ →  ● _$ebnf$1}, from: 166
+12: {nl →  ● %newline}, from: 166
+13: {_$ebnf$1 →  ● %_}, from: 166
+14: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 166
+
+
+Parse results: 
+[ [ [ [ [ { type: [32m'keyword'[39m,
+            value: [32m'IF'[39m,
+            text: [32m'IF'[39m,
+            toString: [36m[Function: tokenToString][39m,
+            offset: [33m0[39m,
+            lineBreaks: [33m0[39m,
+            line: [33m1[39m,
+            col: [33m1[39m },
+          [ [ [ [ { type: [32m'LOGICAL_EXPRESSION'[39m,
+                    leftOp: [32m'x'[39m,
+                    relationalOp: [32m'>'[39m,
+                    rightOp: [32m'0'[39m },
+                  { type: [32m'OR_LOGICAL_EXPRESSION'[39m,
+                    logicalOp: [32m'OR'[39m,
+                    expression:
+                     [ { type: [32m'LOGICAL_EXPRESSION'[39m,
+                         leftOp: [32m'z'[39m,
+                         relationalOp: [32m'>'[39m,
+                         rightOp: [32m'0'[39m } ] } ] ],
+              { type: [32m'AND_LOGICAL_EXPRESSION'[39m,
+                logicalOp: [32m'AND'[39m,
+                expression:
+                 [ { type: [32m'IS_MISSING_LOGICAL_EXPRESSION'[39m, identifier: [32m'x'[39m },
+                   { type: [32m'AND_LOGICAL_EXPRESSION'[39m,
+                     logicalOp: [32m'AND'[39m,
+                     expression:
+                      [ [ { type: [32m'LOGICAL_EXPRESSION'[39m,
+                            leftOp: [32m'z'[39m,
+                            relationalOp: [32m'>'[39m,
+                            rightOp: [32m'0'[39m },
+                          { type: [32m'OR_LOGICAL_EXPRESSION'[39m,
+                            logicalOp: [32m'OR'[39m,
+                            expression:
+                             [ [ { type: [32m'LOGICAL_EXPRESSION'[39m,
+                                   leftOp: [32m'x'[39m,
+                                   relationalOp: [32m'>'[39m,
+                                   rightOp: [32m'0'[39m },
+                                 { type: [32m'AND_LOGICAL_EXPRESSION'[39m,
+                                   logicalOp: [32m'AND'[39m,
+                                   expression:
+                                    [ { type: [32m'LOGICAL_EXPRESSION'[39m,
+                                        leftOp: [32m'z'[39m,
+                                        relationalOp: [32m'>'[39m,
+                                        rightOp: [32m'0'[39m } ] } ] ] } ] ] } ] } ],
+            { type: [32m'AND_LOGICAL_EXPRESSION'[39m,
+              logicalOp: [32m'AND'[39m,
+              expression:
+               [ { type: [32m'LOGICAL_EXPRESSION'[39m,
+                   leftOp: [32m'y'[39m,
+                   relationalOp: [32m'>'[39m,
+                   rightOp: [32m'0'[39m },
+                 { type: [32m'OR_LOGICAL_EXPRESSION'[39m,
+                   logicalOp: [32m'OR'[39m,
+                   expression:
+                    [ { type: [32m'LOGICAL_EXPRESSION'[39m,
+                        leftOp: [32m'z'[39m,
+                        relationalOp: [32m'>'[39m,
+                        rightOp: [32m'0'[39m } ] } ] } ],
+          { returnToken:
+             { type: [32m'keyword'[39m,
+               value: [32m'RETURN'[39m,
+               text: [32m'RETURN'[39m,
+               toString: [36m[Function: tokenToString][39m,
+               offset: [33m96[39m,
+               lineBreaks: [33m0[39m,
+               line: [33m1[39m,
+               col: [33m97[39m },
+            valueToken:
+             { type: [32m'number'[39m,
+               value: [32m'1'[39m,
+               text: [32m'1'[39m,
+               toString: [36m[Function: tokenToString][39m,
+               offset: [33m103[39m,
+               lineBreaks: [33m0[39m,
+               line: [33m1[39m,
+               col: [33m104[39m } } ] ],
+      [ [ { type: [32m'keyword'[39m,
+            value: [32m'IF'[39m,
+            text: [32m'IF'[39m,
+            toString: [36m[Function: tokenToString][39m,
+            offset: [33m105[39m,
+            lineBreaks: [33m0[39m,
+            line: [33m1[39m,
+            col: [33m106[39m },
+          [ { type: [32m'LOGICAL_EXPRESSION'[39m,
+              leftOp: [32m'z'[39m,
+              relationalOp: [32m'>'[39m,
+              rightOp: [32m'0'[39m },
+            { type: [32m'AND_LOGICAL_EXPRESSION'[39m,
+              logicalOp: [32m'AND'[39m,
+              expression:
+               [ { type: [32m'LOGICAL_EXPRESSION'[39m,
+                   leftOp: [32m'x'[39m,
+                   relationalOp: [32m'>'[39m,
+                   rightOp: [32m'100'[39m },
+                 { type: [32m'OR_LOGICAL_EXPRESSION'[39m,
+                   logicalOp: [32m'OR'[39m,
+                   expression:
+                    [ { type: [32m'IS_MISSING_LOGICAL_EXPRESSION'[39m, identifier: [32m'asd'[39m } ] } ] } ],
+          { returnToken:
+             { type: [32m'keyword'[39m,
+               value: [32m'RETURN'[39m,
+               text: [32m'RETURN'[39m,
+               toString: [36m[Function: tokenToString][39m,
+               offset: [33m147[39m,
+               lineBreaks: [33m0[39m,
+               line: [33m1[39m,
+               col: [33m148[39m },
+            valueToken:
+             { type: [32m'number'[39m,
+               value: [32m'2'[39m,
+               text: [32m'2'[39m,
+               toString: [36m[Function: tokenToString][39m,
+               offset: [33m154[39m,
+               lineBreaks: [33m0[39m,
+               line: [33m1[39m,
+               col: [33m155[39m } } ] ],
+      [ [ { type: [32m'keyword'[39m,
+            value: [32m'IF'[39m,
+            text: [32m'IF'[39m,
+            toString: [36m[Function: tokenToString][39m,
+            offset: [33m156[39m,
+            lineBreaks: [33m0[39m,
+            line: [33m1[39m,
+            col: [33m157[39m },
+          [ { type: [32m'LOGICAL_EXPRESSION'[39m,
+              leftOp: [32m'y'[39m,
+              relationalOp: [32m'>'[39m,
+              rightOp: [32m'0'[39m } ],
+          { returnToken:
+             { type: [32m'keyword'[39m,
+               value: [32m'RETURN'[39m,
+               text: [32m'RETURN'[39m,
+               toString: [36m[Function: tokenToString][39m,
+               offset: [33m167[39m,
+               lineBreaks: [33m0[39m,
+               line: [33m1[39m,
+               col: [33m168[39m },
+            valueToken:
+             { type: [32m'number'[39m,
+               value: [32m'3'[39m,
+               text: [32m'3'[39m,
+               toString: [36m[Function: tokenToString][39m,
+               offset: [33m174[39m,
+               lineBreaks: [33m0[39m,
+               line: [33m1[39m,
+               col: [33m175[39m } } ] ],
+      [ [ { type: [32m'keyword'[39m,
+            value: [32m'IF'[39m,
+            text: [32m'IF'[39m,
+            toString: [36m[Function: tokenToString][39m,
+            offset: [33m176[39m,
+            lineBreaks: [33m0[39m,
+            line: [33m1[39m,
+            col: [33m177[39m },
+          [ [ [ { type: [32m'LOGICAL_EXPRESSION'[39m,
+                  leftOp: [32m'x'[39m,
+                  relationalOp: [32m'>'[39m,
+                  rightOp: [32m'0'[39m } ] ],
+            { type: [32m'AND_LOGICAL_EXPRESSION'[39m,
+              logicalOp: [32m'AND'[39m,
+              expression:
+               [ { type: [32m'LOGICAL_EXPRESSION'[39m,
+                   leftOp: [32m'z'[39m,
+                   relationalOp: [32m'>'[39m,
+                   rightOp: [32m'0'[39m } ] } ],
+          { returnToken:
+             { type: [32m'keyword'[39m,
+               value: [32m'RETURN'[39m,
+               text: [32m'RETURN'[39m,
+               toString: [36m[Function: tokenToString][39m,
+               offset: [33m201[39m,
+               lineBreaks: [33m0[39m,
+               line: [33m1[39m,
+               col: [33m202[39m },
+            valueToken:
+             { type: [32m'number'[39m,
+               value: [32m'4'[39m,
+               text: [32m'4'[39m,
+               toString: [36m[Function: tokenToString][39m,
+               offset: [33m208[39m,
+               lineBreaks: [33m0[39m,
+               line: [33m1[39m,
+               col: [33m209[39m } } ] ],
+      [ [ { type: [32m'keyword'[39m,
+            value: [32m'IF'[39m,
+            text: [32m'IF'[39m,
+            toString: [36m[Function: tokenToString][39m,
+            offset: [33m210[39m,
+            lineBreaks: [33m0[39m,
+            line: [33m1[39m,
+            col: [33m211[39m },
+          [ { type: [32m'IS_MISSING_LOGICAL_EXPRESSION'[39m, identifier: [32m'x'[39m } ],
+          { returnToken:
+             { type: [32m'keyword'[39m,
+               value: [32m'RETURN'[39m,
+               text: [32m'RETURN'[39m,
+               toString: [36m[Function: tokenToString][39m,
+               offset: [33m229[39m,
+               lineBreaks: [33m0[39m,
+               line: [33m1[39m,
+               col: [33m230[39m },
+            valueToken:
+             { type: [32m'number'[39m,
+               value: [32m'5'[39m,
+               text: [32m'5'[39m,
+               toString: [36m[Function: tokenToString][39m,
+               offset: [33m236[39m,
+               lineBreaks: [33m0[39m,
+               line: [33m1[39m,
+               col: [33m237[39m } } ] ] ],
+    [ { type: [32m'keyword'[39m,
+        value: [32m'ELSE'[39m,
+        text: [32m'ELSE'[39m,
+        toString: [36m[Function: tokenToString][39m,
+        offset: [33m238[39m,
+        lineBreaks: [33m0[39m,
+        line: [33m1[39m,
+        col: [33m239[39m },
+      { returnToken:
+         { type: [32m'keyword'[39m,
+           value: [32m'RETURN'[39m,
+           text: [32m'RETURN'[39m,
+           toString: [36m[Function: tokenToString][39m,
+           offset: [33m243[39m,
+           lineBreaks: [33m0[39m,
+           line: [33m1[39m,
+           col: [33m244[39m },
+        valueToken:
+         { type: [32m'number'[39m,
+           value: [32m'0'[39m,
+           text: [32m'0'[39m,
+           toString: [36m[Function: tokenToString][39m,
+           offset: [33m250[39m,
+           lineBreaks: [33m0[39m,
+           line: [33m1[39m,
+           col: [33m251[39m } } ] ] ]

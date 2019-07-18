@@ -1,0 +1,37 @@
+{
+  "name": "nearley-experiment",
+  "version": "1.0.0",
+  "description": "Experimenting NearleyJS",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run nodemon:app\" \"npm run nodemon:nearley\"",
+    "nodemon:app": "nodemon",
+    "nodemon:nearley": "nodemon -w grammar.ne --exec npm run nearley",
+    "nearley": "npm-run-all -p nearleyc:js nearley-railroad",
+    "nearleyc:js": "nearleyc grammar.ne -o grammar.js",
+    "nearley-railroad": "nearley-railroad grammar.ne -o grammar.html",
+    "nearley-test": "nearley-test -i \"IF (x > 0) RETURN 1 ELSE RETURN 0\" -o \"analysis.txt\" grammar.js"
+  },
+  "author": {
+    "email": "zeferinix@gmail.com",
+    "name": "Cerino O. Ligutom III",
+    "url": "https://www.zeferinix.com/"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@types/nearley": "^2.11.0",
+    "lodash": "^4.17.14",
+    "moo": "^0.5.0",
+    "nearley": "^2.16.0",
+    "nodemon": "^1.19.1",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.2"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.136",
+    "@types/moo": "^0.5.0",
+    "@types/node": "^12.0.10",
+    "concurrently": "^4.1.1",
+    "npm-run-all": "^4.1.5"
+  }
+}

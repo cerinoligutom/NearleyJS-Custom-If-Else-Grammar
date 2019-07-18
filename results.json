@@ -1,0 +1,370 @@
+[
+  [
+    [
+      [
+        [
+          {
+            "type": "keyword",
+            "value": "IF",
+            "text": "IF",
+            "offset": 0,
+            "lineBreaks": 0,
+            "line": 1,
+            "col": 1
+          },
+          [
+            [
+              [
+                [
+                  {
+                    "type": "LOGICAL_EXPRESSION",
+                    "leftOp": "x",
+                    "relationalOp": ">",
+                    "rightOp": "0"
+                  },
+                  {
+                    "type": "OR_LOGICAL_EXPRESSION",
+                    "logicalOp": "OR",
+                    "expression": [
+                      {
+                        "type": "LOGICAL_EXPRESSION",
+                        "leftOp": "z",
+                        "relationalOp": ">",
+                        "rightOp": "0"
+                      }
+                    ]
+                  }
+                ]
+              ],
+              {
+                "type": "AND_LOGICAL_EXPRESSION",
+                "logicalOp": "AND",
+                "expression": [
+                  {
+                    "type": "IS_MISSING_LOGICAL_EXPRESSION",
+                    "identifier": "x"
+                  },
+                  {
+                    "type": "AND_LOGICAL_EXPRESSION",
+                    "logicalOp": "AND",
+                    "expression": [
+                      [
+                        {
+                          "type": "LOGICAL_EXPRESSION",
+                          "leftOp": "z",
+                          "relationalOp": ">",
+                          "rightOp": "0"
+                        },
+                        {
+                          "type": "OR_LOGICAL_EXPRESSION",
+                          "logicalOp": "OR",
+                          "expression": [
+                            [
+                              {
+                                "type": "LOGICAL_EXPRESSION",
+                                "leftOp": "x",
+                                "relationalOp": ">",
+                                "rightOp": "0"
+                              },
+                              {
+                                "type": "AND_LOGICAL_EXPRESSION",
+                                "logicalOp": "AND",
+                                "expression": [
+                                  {
+                                    "type": "LOGICAL_EXPRESSION",
+                                    "leftOp": "z",
+                                    "relationalOp": ">",
+                                    "rightOp": "0"
+                                  }
+                                ]
+                              }
+                            ]
+                          ]
+                        }
+                      ]
+                    ]
+                  }
+                ]
+              }
+            ],
+            {
+              "type": "AND_LOGICAL_EXPRESSION",
+              "logicalOp": "AND",
+              "expression": [
+                {
+                  "type": "LOGICAL_EXPRESSION",
+                  "leftOp": "y",
+                  "relationalOp": ">",
+                  "rightOp": "0"
+                },
+                {
+                  "type": "OR_LOGICAL_EXPRESSION",
+                  "logicalOp": "OR",
+                  "expression": [
+                    {
+                      "type": "LOGICAL_EXPRESSION",
+                      "leftOp": "z",
+                      "relationalOp": ">",
+                      "rightOp": "0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          {
+            "returnToken": {
+              "type": "keyword",
+              "value": "RETURN",
+              "text": "RETURN",
+              "offset": 96,
+              "lineBreaks": 0,
+              "line": 1,
+              "col": 97
+            },
+            "valueToken": {
+              "type": "number",
+              "value": "1",
+              "text": "1",
+              "offset": 103,
+              "lineBreaks": 0,
+              "line": 1,
+              "col": 104
+            }
+          }
+        ]
+      ],
+      [
+        [
+          {
+            "type": "keyword",
+            "value": "IF",
+            "text": "IF",
+            "offset": 105,
+            "lineBreaks": 0,
+            "line": 2,
+            "col": 1
+          },
+          [
+            {
+              "type": "LOGICAL_EXPRESSION",
+              "leftOp": "z",
+              "relationalOp": ">",
+              "rightOp": "0"
+            },
+            {
+              "type": "AND_LOGICAL_EXPRESSION",
+              "logicalOp": "AND",
+              "expression": [
+                {
+                  "type": "LOGICAL_EXPRESSION",
+                  "leftOp": "x",
+                  "relationalOp": ">",
+                  "rightOp": "100"
+                },
+                {
+                  "type": "OR_LOGICAL_EXPRESSION",
+                  "logicalOp": "OR",
+                  "expression": [
+                    {
+                      "type": "IS_MISSING_LOGICAL_EXPRESSION",
+                      "identifier": "asd"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          {
+            "returnToken": {
+              "type": "keyword",
+              "value": "RETURN",
+              "text": "RETURN",
+              "offset": 147,
+              "lineBreaks": 0,
+              "line": 2,
+              "col": 43
+            },
+            "valueToken": {
+              "type": "number",
+              "value": "2",
+              "text": "2",
+              "offset": 154,
+              "lineBreaks": 0,
+              "line": 2,
+              "col": 50
+            }
+          }
+        ]
+      ],
+      [
+        [
+          {
+            "type": "keyword",
+            "value": "IF",
+            "text": "IF",
+            "offset": 156,
+            "lineBreaks": 0,
+            "line": 3,
+            "col": 1
+          },
+          [
+            {
+              "type": "LOGICAL_EXPRESSION",
+              "leftOp": "y",
+              "relationalOp": ">",
+              "rightOp": "0"
+            }
+          ],
+          {
+            "returnToken": {
+              "type": "keyword",
+              "value": "RETURN",
+              "text": "RETURN",
+              "offset": 167,
+              "lineBreaks": 0,
+              "line": 3,
+              "col": 12
+            },
+            "valueToken": {
+              "type": "number",
+              "value": "3",
+              "text": "3",
+              "offset": 174,
+              "lineBreaks": 0,
+              "line": 3,
+              "col": 19
+            }
+          }
+        ]
+      ],
+      [
+        [
+          {
+            "type": "keyword",
+            "value": "IF",
+            "text": "IF",
+            "offset": 176,
+            "lineBreaks": 0,
+            "line": 4,
+            "col": 1
+          },
+          [
+            [
+              [
+                {
+                  "type": "LOGICAL_EXPRESSION",
+                  "leftOp": "x",
+                  "relationalOp": ">",
+                  "rightOp": "0"
+                }
+              ]
+            ],
+            {
+              "type": "AND_LOGICAL_EXPRESSION",
+              "logicalOp": "AND",
+              "expression": [
+                {
+                  "type": "LOGICAL_EXPRESSION",
+                  "leftOp": "z",
+                  "relationalOp": ">",
+                  "rightOp": "0"
+                }
+              ]
+            }
+          ],
+          {
+            "returnToken": {
+              "type": "keyword",
+              "value": "RETURN",
+              "text": "RETURN",
+              "offset": 201,
+              "lineBreaks": 0,
+              "line": 4,
+              "col": 26
+            },
+            "valueToken": {
+              "type": "number",
+              "value": "4",
+              "text": "4",
+              "offset": 208,
+              "lineBreaks": 0,
+              "line": 4,
+              "col": 33
+            }
+          }
+        ]
+      ],
+      [
+        [
+          {
+            "type": "keyword",
+            "value": "IF",
+            "text": "IF",
+            "offset": 210,
+            "lineBreaks": 0,
+            "line": 5,
+            "col": 1
+          },
+          [
+            {
+              "type": "IS_MISSING_LOGICAL_EXPRESSION",
+              "identifier": "x"
+            }
+          ],
+          {
+            "returnToken": {
+              "type": "keyword",
+              "value": "RETURN",
+              "text": "RETURN",
+              "offset": 229,
+              "lineBreaks": 0,
+              "line": 5,
+              "col": 20
+            },
+            "valueToken": {
+              "type": "number",
+              "value": "5",
+              "text": "5",
+              "offset": 236,
+              "lineBreaks": 0,
+              "line": 5,
+              "col": 27
+            }
+          }
+        ]
+      ]
+    ],
+    [
+      {
+        "type": "keyword",
+        "value": "ELSE",
+        "text": "ELSE",
+        "offset": 238,
+        "lineBreaks": 0,
+        "line": 6,
+        "col": 1
+      },
+      {
+        "returnToken": {
+          "type": "keyword",
+          "value": "RETURN",
+          "text": "RETURN",
+          "offset": 243,
+          "lineBreaks": 0,
+          "line": 6,
+          "col": 6
+        },
+        "valueToken": {
+          "type": "number",
+          "value": "0",
+          "text": "0",
+          "offset": 250,
+          "lineBreaks": 0,
+          "line": 6,
+          "col": 13
+        }
+      }
+    ]
+  ]
+]
