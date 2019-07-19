@@ -66,7 +66,7 @@ LogicalOperator ->
 LogicalExpression -> 
   %identifier _ RelationalOperator _ %number 
   {% ([identifier,,operator,,number]) => ({
-    type: 'LOGICAL_EXPRESSION',
+    type: 'RELATIONAL_EXPRESSION',
     leftOp: identifier.value,
     relationalOp: operator,
     rightOp: number.value

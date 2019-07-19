@@ -63,7 +63,7 @@ var grammar = {
     {"name": "LogicalOperator", "symbols": [{"literal":"AND"}], "postprocess": ([data]) => data.value},
     {"name": "LogicalOperator", "symbols": [{"literal":"OR"}], "postprocess": ([data]) => data.value},
     {"name": "LogicalExpression", "symbols": [(lexer.has("identifier") ? {type: "identifier"} : identifier), "_", "RelationalOperator", "_", (lexer.has("number") ? {type: "number"} : number)], "postprocess":  ([identifier,,operator,,number]) => ({
-          type: 'LOGICAL_EXPRESSION',
+          type: 'RELATIONAL_EXPRESSION',
           leftOp: identifier.value,
           relationalOp: operator,
           rightOp: number.value

@@ -1,8 +1,14 @@
 import * as nearley from 'nearley';
 const grammar = require('./grammar');
-import * as fs from 'fs';
-import { exec } from 'child_process';
 import * as _ from 'lodash';
+
+type IfStatement = [IMooLexerToken, ILogicalExpressions, IReturnStatement];
+type ElseStatement = [IMooLexerToken, IReturnStatement];
+
+interface IEvaluationResult {
+  evaluation: boolean;
+  value: any;
+}
 
 interface IMooLexerToken {
   col: number;
@@ -15,25 +21,25 @@ interface IMooLexerToken {
   value: any;
 }
 
-interface LogicalExpressions
+interface ILogicalExpressions
   extends Array<
-    | LogicalExpressions
-    | ILogicalExpression
-    | IConditionalLogicalExpression
+    | ILogicalExpressions
+    | IRelationalExpression
+    | IConditionalExpression
     | IMissingLogicalExpression
   > {}
 
-interface ILogicalExpression {
-  type: LogicalExpressionTypes.LOGICAL_EXPR;
+interface IRelationalExpression {
+  type: LogicalExpressionTypes.RELATIONAL_EXPR;
   leftOp: string;
   relationalOp: string;
   rightOp: string;
 }
 
-interface IConditionalLogicalExpression {
+interface IConditionalExpression {
   type: LogicalExpressionTypes.AND_EXPR | LogicalExpressionTypes.OR_EXPR;
   logicalOp: string;
-  expression: LogicalExpressions[];
+  expression: ILogicalExpressions[];
 }
 
 interface IMissingLogicalExpression {
@@ -41,87 +47,60 @@ interface IMissingLogicalExpression {
   identifier: string;
 }
 
-enum LogicalExpressionTypes {
-  LOGICAL_EXPR = 'LOGICAL_EXPRESSION',
-  AND_EXPR = 'AND_LOGICAL_EXPRESSION',
-  OR_EXPR = 'OR_LOGICAL_EXPRESSION',
-  IS_MISSING_EXPR = 'IS_MISSING_LOGICAL_EXPRESSION'
-}
-
 interface IReturnStatement {
   returnToken: IMooLexerToken;
   valueToken: IMooLexerToken;
 }
 
-const input = `IF ((((x > 0 OR z > 0)) AND IS_MISSING(x) AND (z > 0 OR (x > 0 AND z > 0))) AND y > 0 OR z > 0) RETURN 1
-IF (z > 0 AND x > 100 OR IS_MISSING(asd)) RETURN 2
-IF (y > 0) RETURN 3
-IF (((x > 0)) AND z > 0) RETURN 4
-IF (IS_MISSING(x)) RETURN 5
-ELSE RETURN 0`;
-
-// const input = `IF ((x >= 99 AND z > 0)) RETURN 1
-// IF (z > 0 AND x > 100 OR IS_MISSING(asd)) RETURN 2
-// IF (y > 0) RETURN 3
-// IF (((x > 0)) AND z > 0) RETURN 4
-// IF (IS_MISSING(x)) RETURN 5
-// ELSE RETURN 0`;
-
-// const input = `IF ((x >= 99 AND z > 0)) RETURN 1
-// ELSE RETURN 0`;
-
-// const input = `IF ((((x > 0 OR z > 0)) AND IS_MISSING(x) AND (z > 0 OR (x > 0 AND z > 0))) AND y > 0 OR z > 0) RETURN 1
-// ELSE RETURN 0`;
-
-// const input = `IF (((((x > 0 AND y > 0))) AND (((((z > 0 AND IS_MISSING(z)))))) AND y > 0)) RETURN 1
-// ELSE RETURN 0`
-
-// const input = `IF (x == 0) RETURN 1
-// ELSE RETURN 0`;
-
-// const input = `IF ((((x == 98 OR x <= 99)) AND x == 98) OR (y == 2 AND z == 1) AND IS_MISSING(za)) RETURN 1
-// ELSE RETURN 0`;
-
-let parserResults = [];
-
-const parser = new nearley.Parser(nearley.Grammar.fromCompiled(grammar));
-try {
-  parser.feed(input);
-  const { results } = parser;
-  parserResults = results;
-  const formattedResults = JSON.stringify(results, null, 2);
-
-  fs.writeFile('results.json', formattedResults, err => {
-    if (err) console.log(err);
-  });
-
-  const command = `nearley-test -i "${input
-    .split('\n')
-    .join(' ')}" -o analysis.txt grammar.js`;
-  exec(command, err => {
-    if (err) console.log(err);
-  });
-} catch (err) {
-  console.log('error:', err.message);
+enum LogicalExpressionTypes {
+  RELATIONAL_EXPR = 'RELATIONAL_EXPRESSION',
+  AND_EXPR = 'AND_LOGICAL_EXPRESSION',
+  OR_EXPR = 'OR_LOGICAL_EXPRESSION',
+  IS_MISSING_EXPR = 'IS_MISSING_LOGICAL_EXPRESSION'
 }
 
-const [elseStatement, ifStatements] = parserResults[0].reverse();
+const parser = new nearley.Parser(nearley.Grammar.fromCompiled(grammar));
+export const evaluate = async (input: string = '') => {
+  try {
+    parser.feed(input);
+    const { results } = parser;
 
-const evaluation = ifStatements
-  .map(x => x[0])
-  .map(ifStatement => handleIfExpression(ifStatement, { x: 99, z: 1, y: 1 }));
-console.log('evaluation:', evaluation);
-console.log('input:', JSON.stringify(input));
+    if (results.length === 0)
+      throw new Error('Invalid/Unexpected/Empty input.');
+
+    let [ifStatements, elseStatement] = results[0];
+
+    const ifStatementResults: IEvaluationResult[] = ifStatements
+      .map(x => x[0] as IfStatement) // Each if statement is wrapped inside an array from nearley parser results
+      .map(ifStatement =>
+        handleIfExpression(ifStatement, { x: 99, z: 1, y: 1 })
+      );
+    // As per spec, the last truthy evaluation among the sequence will be the result
+    // so we reverse the list then find the first truthy evaluation to get the result
+    ifStatementResults.reverse();
+    const ifStatementResult = ifStatementResults.find(x => x.evaluation);
+    const elseStatementResult = handleElseExpression(elseStatement);
+
+    if (ifStatementResult) {
+      return ifStatementResult.value;
+    } else {
+      return elseStatementResult.value;
+    }
+  } catch (err) {
+    console.log('error:', err.message);
+    return Promise.reject(err);
+  }
+};
 
 function handleIfExpression(
-  ifStatement: any[],
+  ifStatement: IfStatement,
   values: { [key: string]: any }
-) {
+): IEvaluationResult {
   const [ifToken, expressions, returnStatement] = ifStatement;
 
   if (ifToken.value !== 'IF')
     throw new Error(
-      `Failed to parse IF_EXPRESSION due to invalid token. Got ${
+      `Failed to parse "IF expression" due to invalid token. Got ${
         ifToken.value
       }.`
     );
@@ -129,7 +108,25 @@ function handleIfExpression(
   const { value } = parseReturnStatement(returnStatement);
 
   return {
-    evaluation: evaluate(reduceExpression(expressions), values),
+    evaluation: evaluateExpression(reduceExpression(expressions), values),
+    value
+  };
+}
+
+function handleElseExpression(elseStatement: ElseStatement): IEvaluationResult {
+  const [elseToken, returnStatement] = elseStatement;
+
+  if (elseToken.value !== 'ELSE')
+    throw new Error(
+      `Failed to parse "ELSE expression" due to invalid token. Got ${
+        elseToken.value
+      }.`
+    );
+
+  const { value } = parseReturnStatement(returnStatement);
+
+  return {
+    evaluation: true,
     value
   };
 }
@@ -148,8 +145,8 @@ function parseReturnStatement(returnStatement: IReturnStatement) {
   };
 }
 
-function evaluate(
-  logicalExpressions: LogicalExpressions,
+function evaluateExpression(
+  logicalExpressions: ILogicalExpressions,
   values: { [key: string]: any }
 ) {
   let expressions = _.cloneDeep(logicalExpressions);
@@ -157,10 +154,10 @@ function evaluate(
 
   if (expressions.length === 1) {
     const expression = expressions[0] as
-      | ILogicalExpression
+      | IRelationalExpression
       | IMissingLogicalExpression;
     switch (expression.type) {
-      case LogicalExpressionTypes.LOGICAL_EXPR:
+      case LogicalExpressionTypes.RELATIONAL_EXPR:
         return evaluateLogicalExpression(expression, values);
       case LogicalExpressionTypes.IS_MISSING_EXPR:
         return evaluateIsMissingLogicalExpression(expression, values);
@@ -173,24 +170,24 @@ function evaluate(
 }
 
 function evaluateConditionalExpression(
-  logicalExpressions: LogicalExpressions,
+  logicalExpressions: ILogicalExpressions,
   values: { [key: string]: any }
 ) {
   let expressions = _.cloneDeep(logicalExpressions) as any;
 
-  const logicalExpression = expressions[0] as LogicalExpressions;
-  const conditionalExpression = expressions[1] as IConditionalLogicalExpression;
+  const logicalExpression = expressions[0] as ILogicalExpressions;
+  const conditionalExpression = expressions[1] as IConditionalExpression;
 
   switch (conditionalExpression.type) {
     case LogicalExpressionTypes.AND_EXPR:
       return (
-        evaluate(logicalExpression, values) &&
-        evaluate(conditionalExpression.expression, values)
+        evaluateExpression(logicalExpression, values) &&
+        evaluateExpression(conditionalExpression.expression, values)
       );
     case LogicalExpressionTypes.OR_EXPR:
       return (
-        evaluate(logicalExpression, values) ||
-        evaluate(conditionalExpression.expression, values)
+        evaluateExpression(logicalExpression, values) ||
+        evaluateExpression(conditionalExpression.expression, values)
       );
     default:
       throw new Error(
@@ -202,15 +199,15 @@ function evaluateConditionalExpression(
 }
 
 function evaluateLogicalExpression(
-  expression: ILogicalExpression,
+  expression: IRelationalExpression,
   values: { [key: string]: any }
 ) {
   const { type, leftOp, rightOp, relationalOp } = expression;
 
-  if (type !== LogicalExpressionTypes.LOGICAL_EXPR)
+  if (type !== LogicalExpressionTypes.RELATIONAL_EXPR)
     throw new Error(
       `Failed to evaluate ${
-        LogicalExpressionTypes.LOGICAL_EXPR
+        LogicalExpressionTypes.RELATIONAL_EXPR
       }. Got ${type} instead.`
     );
 
@@ -236,7 +233,7 @@ function evaluateLogicalExpression(
     default:
       throw new Error(
         `Failed to evaluate ${
-          LogicalExpressionTypes.LOGICAL_EXPR
+          LogicalExpressionTypes.RELATIONAL_EXPR
         }. '${relationalOp}' is not supported.`
       );
   }
@@ -264,29 +261,46 @@ function evaluateIsMissingLogicalExpression(
 }
 
 function reduceExpression(
-  logicalExpression: LogicalExpressions
-): LogicalExpressions {
+  logicalExpression: ILogicalExpressions
+): ILogicalExpressions {
   let expressions = _.cloneDeep(logicalExpression);
 
   if (Array.isArray(expressions)) {
     if (Array.isArray(expressions[0])) {
       if (expressions.length === 1) {
-        expressions = expressions[0] as LogicalExpressions;
+        expressions = expressions[0] as ILogicalExpressions;
         return reduceExpression(expressions);
       } else if (expressions.length === 2) {
-        expressions[0] = reduceExpression(expressions[0] as LogicalExpressions);
+        expressions[0] = reduceExpression(
+          expressions[0] as ILogicalExpressions
+        );
       }
     }
 
     if (expressions.length === 2) {
-      const conditionalExpression = expressions[1] as IConditionalLogicalExpression;
+      const conditionalExpression = expressions[1] as IConditionalExpression;
       if (conditionalExpression.expression) {
         conditionalExpression.expression = reduceExpression(
           conditionalExpression.expression
-        ) as LogicalExpressions[];
+        ) as ILogicalExpressions[];
       }
     }
   }
 
   return expressions;
 }
+
+const input = `IF ((((x > 0 OR z > 0)) AND IS_MISSING(x) AND (z > 0 OR (x > 0 AND z > 0))) AND y > 0 OR z > 0) RETURN 1
+IF (z > 0 AND x > 100 OR IS_MISSING(asd)) RETURN 2
+IF (y > 0) RETURN 3
+IF (((x > 0)) AND z > 0) RETURN 4
+IF (IS_MISSING(x)) RETURN 5
+ELSE RETURN 0`;
+
+evaluate(input)
+  .then(val => {
+    console.log('evaluated:', val);
+  })
+  .catch(err => {
+    console.error('evaluation error:', err);
+  });
