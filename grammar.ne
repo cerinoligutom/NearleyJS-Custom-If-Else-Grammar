@@ -25,8 +25,8 @@ PrimaryExpression -> (IfStatement):+ ElseStatement
 
 Expression -> lp __ ConditionalExpression __ rp {% ([,,conditionalExpression]) => conditionalExpression %}
 
-IfStatement -> "IF" _ Expression _ ReturnStatement ws {% (data) => data.filter(x => !!x) %}
-ElseStatement -> "ELSE" _ ReturnStatement ws:? {% (data) => data.filter(x => !!x) %}
+IfStatement -> "IF" _ Expression _ ReturnStatement _ {% (data) => data.filter(x => !!x) %}
+ElseStatement -> "ELSE" _ ReturnStatement __ {% (data) => data.filter(x => !!x) %}
 ReturnStatement -> "RETURN" _ %number {% ([returnToken,,valueToken]) => ({ returnToken, valueToken }) %}
 
 ConditionalExpression -> 
@@ -88,7 +88,5 @@ LogicalMissingExpression ->
 
 rp -> %rparen {% () => null %}
 lp -> %lparen {% () => null %}
-ws -> (_ | nl):+ {% () => null %}
-nl -> %newline {% () => null %}
 _ -> %_:+ {% () => null %}
 __ -> %_:* {% () => null %}
