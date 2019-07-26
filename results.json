@@ -17,7 +17,7 @@
               [
                 [
                   {
-                    "type": "LOGICAL_EXPRESSION",
+                    "type": "RELATIONAL_EXPRESSION",
                     "leftOp": "x",
                     "relationalOp": ">",
                     "rightOp": "0"
@@ -27,7 +27,7 @@
                     "logicalOp": "OR",
                     "expression": [
                       {
-                        "type": "LOGICAL_EXPRESSION",
+                        "type": "RELATIONAL_EXPRESSION",
                         "leftOp": "z",
                         "relationalOp": ">",
                         "rightOp": "0"
@@ -50,7 +50,7 @@
                     "expression": [
                       [
                         {
-                          "type": "LOGICAL_EXPRESSION",
+                          "type": "RELATIONAL_EXPRESSION",
                           "leftOp": "z",
                           "relationalOp": ">",
                           "rightOp": "0"
@@ -61,7 +61,7 @@
                           "expression": [
                             [
                               {
-                                "type": "LOGICAL_EXPRESSION",
+                                "type": "RELATIONAL_EXPRESSION",
                                 "leftOp": "x",
                                 "relationalOp": ">",
                                 "rightOp": "0"
@@ -71,7 +71,7 @@
                                 "logicalOp": "AND",
                                 "expression": [
                                   {
-                                    "type": "LOGICAL_EXPRESSION",
+                                    "type": "RELATIONAL_EXPRESSION",
                                     "leftOp": "z",
                                     "relationalOp": ">",
                                     "rightOp": "0"
@@ -92,7 +92,7 @@
               "logicalOp": "AND",
               "expression": [
                 {
-                  "type": "LOGICAL_EXPRESSION",
+                  "type": "RELATIONAL_EXPRESSION",
                   "leftOp": "y",
                   "relationalOp": ">",
                   "rightOp": "0"
@@ -102,7 +102,7 @@
                   "logicalOp": "OR",
                   "expression": [
                     {
-                      "type": "LOGICAL_EXPRESSION",
+                      "type": "RELATIONAL_EXPRESSION",
                       "leftOp": "z",
                       "relationalOp": ">",
                       "rightOp": "0"
@@ -147,7 +147,7 @@
           },
           [
             {
-              "type": "LOGICAL_EXPRESSION",
+              "type": "RELATIONAL_EXPRESSION",
               "leftOp": "z",
               "relationalOp": ">",
               "rightOp": "0"
@@ -157,7 +157,7 @@
               "logicalOp": "AND",
               "expression": [
                 {
-                  "type": "LOGICAL_EXPRESSION",
+                  "type": "RELATIONAL_EXPRESSION",
                   "leftOp": "x",
                   "relationalOp": ">",
                   "rightOp": "100"
@@ -210,7 +210,7 @@
           },
           [
             {
-              "type": "LOGICAL_EXPRESSION",
+              "type": "RELATIONAL_EXPRESSION",
               "leftOp": "y",
               "relationalOp": ">",
               "rightOp": "0"
@@ -253,7 +253,7 @@
             [
               [
                 {
-                  "type": "LOGICAL_EXPRESSION",
+                  "type": "RELATIONAL_EXPRESSION",
                   "leftOp": "x",
                   "relationalOp": ">",
                   "rightOp": "0"
@@ -265,7 +265,7 @@
               "logicalOp": "AND",
               "expression": [
                 {
-                  "type": "LOGICAL_EXPRESSION",
+                  "type": "RELATIONAL_EXPRESSION",
                   "leftOp": "z",
                   "relationalOp": ">",
                   "rightOp": "0"

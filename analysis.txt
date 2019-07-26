@@ -6,10 +6,10 @@ Chart: 0
 1: {PrimaryExpression$ebnf$1 →  ● PrimaryExpression$ebnf$1$subexpression$1}, from: 0
 2: {PrimaryExpression$ebnf$1 →  ● PrimaryExpression$ebnf$1 PrimaryExpression$ebnf$1$subexpression$2}, from: 0
 3: {PrimaryExpression$ebnf$1$subexpression$1 →  ● IfStatement}, from: 0
-4: {IfStatement →  ● "IF" _ Expression _ ReturnStatement ws}, from: 0
+4: {IfStatement →  ● "IF" _ Expression _ ReturnStatement _}, from: 0
 
 Chart: 1
-0: {IfStatement → "IF" ● _ Expression _ ReturnStatement ws}, from: 0
+0: {IfStatement → "IF" ● _ Expression _ ReturnStatement _}, from: 0
 1: {_ →  ● _$ebnf$1}, from: 1
 2: {_$ebnf$1 →  ● %_}, from: 1
 3: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 1
@@ -18,7 +18,7 @@ Chart: 2
 0: {_$ebnf$1 → %_ ● }, from: 1
 1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 1
 2: {_ → _$ebnf$1 ● }, from: 1
-3: {IfStatement → "IF" _ ● Expression _ ReturnStatement ws}, from: 0
+3: {IfStatement → "IF" _ ● Expression _ ReturnStatement _}, from: 0
 4: {Expression →  ● lp __ ConditionalExpression __ rp}, from: 2
 5: {lp →  ● %lparen}, from: 2
 
@@ -842,7 +842,7 @@ Chart: 73
 Chart: 74
 0: {rp → %rparen ● }, from: 73
 1: {Expression → lp __ ConditionalExpression __ rp ● }, from: 2
-2: {IfStatement → "IF" _ Expression ● _ ReturnStatement ws}, from: 0
+2: {IfStatement → "IF" _ Expression ● _ ReturnStatement _}, from: 0
 3: {_ →  ● _$ebnf$1}, from: 74
 4: {_$ebnf$1 →  ● %_}, from: 74
 5: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 74
@@ -851,7 +851,7 @@ Chart: 75
 0: {_$ebnf$1 → %_ ● }, from: 74
 1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 74
 2: {_ → _$ebnf$1 ● }, from: 74
-3: {IfStatement → "IF" _ Expression _ ● ReturnStatement ws}, from: 0
+3: {IfStatement → "IF" _ Expression _ ● ReturnStatement _}, from: 0
 4: {ReturnStatement →  ● "RETURN" _ %number}, from: 75
 
 Chart: 76
@@ -868,42 +868,26 @@ Chart: 77
 
 Chart: 78
 0: {ReturnStatement → "RETURN" _ %number ● }, from: 75
-1: {IfStatement → "IF" _ Expression _ ReturnStatement ● ws}, from: 0
-2: {ws →  ● ws$ebnf$1}, from: 78
-3: {ws$ebnf$1 →  ● ws$ebnf$1$subexpression$1}, from: 78
-4: {ws$ebnf$1 →  ● ws$ebnf$1 ws$ebnf$1$subexpression$2}, from: 78
-5: {ws$ebnf$1$subexpression$1 →  ● _}, from: 78
-6: {ws$ebnf$1$subexpression$1 →  ● nl}, from: 78
-7: {_ →  ● _$ebnf$1}, from: 78
-8: {nl →  ● %newline}, from: 78
-9: {_$ebnf$1 →  ● %_}, from: 78
-10: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 78
+1: {IfStatement → "IF" _ Expression _ ReturnStatement ● _}, from: 0
+2: {_ →  ● _$ebnf$1}, from: 78
+3: {_$ebnf$1 →  ● %_}, from: 78
+4: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 78
 
 Chart: 79
 0: {_$ebnf$1 → %_ ● }, from: 78
 1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 78
 2: {_ → _$ebnf$1 ● }, from: 78
-3: {ws$ebnf$1$subexpression$1 → _ ● }, from: 78
-4: {ws$ebnf$1 → ws$ebnf$1$subexpression$1 ● }, from: 78
-5: {ws$ebnf$1 → ws$ebnf$1 ● ws$ebnf$1$subexpression$2}, from: 78
-6: {ws → ws$ebnf$1 ● }, from: 78
-7: {ws$ebnf$1$subexpression$2 →  ● _}, from: 79
-8: {ws$ebnf$1$subexpression$2 →  ● nl}, from: 79
-9: {IfStatement → "IF" _ Expression _ ReturnStatement ws ● }, from: 0
-10: {_ →  ● _$ebnf$1}, from: 79
-11: {nl →  ● %newline}, from: 79
-12: {PrimaryExpression$ebnf$1$subexpression$1 → IfStatement ● }, from: 0
-13: {_$ebnf$1 →  ● %_}, from: 79
-14: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 79
-15: {PrimaryExpression$ebnf$1 → PrimaryExpression$ebnf$1$subexpression$1 ● }, from: 0
-16: {PrimaryExpression$ebnf$1 → PrimaryExpression$ebnf$1 ● PrimaryExpression$ebnf$1$subexpression$2}, from: 0
-17: {PrimaryExpression → PrimaryExpression$ebnf$1 ● ElseStatement}, from: 0
-18: {PrimaryExpression$ebnf$1$subexpression$2 →  ● IfStatement}, from: 79
-19: {ElseStatement →  ● "ELSE" _ ReturnStatement ElseStatement$ebnf$1}, from: 79
-20: {IfStatement →  ● "IF" _ Expression _ ReturnStatement ws}, from: 79
+3: {IfStatement → "IF" _ Expression _ ReturnStatement _ ● }, from: 0
+4: {PrimaryExpression$ebnf$1$subexpression$1 → IfStatement ● }, from: 0
+5: {PrimaryExpression$ebnf$1 → PrimaryExpression$ebnf$1$subexpression$1 ● }, from: 0
+6: {PrimaryExpression$ebnf$1 → PrimaryExpression$ebnf$1 ● PrimaryExpression$ebnf$1$subexpression$2}, from: 0
+7: {PrimaryExpression → PrimaryExpression$ebnf$1 ● ElseStatement}, from: 0
+8: {PrimaryExpression$ebnf$1$subexpression$2 →  ● IfStatement}, from: 79
+9: {ElseStatement →  ● "ELSE" _ ReturnStatement __}, from: 79
+10: {IfStatement →  ● "IF" _ Expression _ ReturnStatement _}, from: 79
 
 Chart: 80
-0: {IfStatement → "IF" ● _ Expression _ ReturnStatement ws}, from: 79
+0: {IfStatement → "IF" ● _ Expression _ ReturnStatement _}, from: 79
 1: {_ →  ● _$ebnf$1}, from: 80
 2: {_$ebnf$1 →  ● %_}, from: 80
 3: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 80
@@ -912,7 +896,7 @@ Chart: 81
 0: {_$ebnf$1 → %_ ● }, from: 80
 1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 80
 2: {_ → _$ebnf$1 ● }, from: 80
-3: {IfStatement → "IF" _ ● Expression _ ReturnStatement ws}, from: 79
+3: {IfStatement → "IF" _ ● Expression _ ReturnStatement _}, from: 79
 4: {Expression →  ● lp __ ConditionalExpression __ rp}, from: 81
 5: {lp →  ● %lparen}, from: 81
 
@@ -1138,7 +1122,7 @@ Chart: 102
 Chart: 103
 0: {rp → %rparen ● }, from: 102
 1: {Expression → lp __ ConditionalExpression __ rp ● }, from: 81
-2: {IfStatement → "IF" _ Expression ● _ ReturnStatement ws}, from: 79
+2: {IfStatement → "IF" _ Expression ● _ ReturnStatement _}, from: 79
 3: {_ →  ● _$ebnf$1}, from: 103
 4: {_$ebnf$1 →  ● %_}, from: 103
 5: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 103
@@ -1147,7 +1131,7 @@ Chart: 104
 0: {_$ebnf$1 → %_ ● }, from: 103
 1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 103
 2: {_ → _$ebnf$1 ● }, from: 103
-3: {IfStatement → "IF" _ Expression _ ● ReturnStatement ws}, from: 79
+3: {IfStatement → "IF" _ Expression _ ● ReturnStatement _}, from: 79
 4: {ReturnStatement →  ● "RETURN" _ %number}, from: 104
 
 Chart: 105
@@ -1164,42 +1148,26 @@ Chart: 106
 
 Chart: 107
 0: {ReturnStatement → "RETURN" _ %number ● }, from: 104
-1: {IfStatement → "IF" _ Expression _ ReturnStatement ● ws}, from: 79
-2: {ws →  ● ws$ebnf$1}, from: 107
-3: {ws$ebnf$1 →  ● ws$ebnf$1$subexpression$1}, from: 107
-4: {ws$ebnf$1 →  ● ws$ebnf$1 ws$ebnf$1$subexpression$2}, from: 107
-5: {ws$ebnf$1$subexpression$1 →  ● _}, from: 107
-6: {ws$ebnf$1$subexpression$1 →  ● nl}, from: 107
-7: {_ →  ● _$ebnf$1}, from: 107
-8: {nl →  ● %newline}, from: 107
-9: {_$ebnf$1 →  ● %_}, from: 107
-10: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 107
+1: {IfStatement → "IF" _ Expression _ ReturnStatement ● _}, from: 79
+2: {_ →  ● _$ebnf$1}, from: 107
+3: {_$ebnf$1 →  ● %_}, from: 107
+4: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 107
 
 Chart: 108
 0: {_$ebnf$1 → %_ ● }, from: 107
 1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 107
 2: {_ → _$ebnf$1 ● }, from: 107
-3: {ws$ebnf$1$subexpression$1 → _ ● }, from: 107
-4: {ws$ebnf$1 → ws$ebnf$1$subexpression$1 ● }, from: 107
-5: {ws$ebnf$1 → ws$ebnf$1 ● ws$ebnf$1$subexpression$2}, from: 107
-6: {ws → ws$ebnf$1 ● }, from: 107
-7: {ws$ebnf$1$subexpression$2 →  ● _}, from: 108
-8: {ws$ebnf$1$subexpression$2 →  ● nl}, from: 108
-9: {IfStatement → "IF" _ Expression _ ReturnStatement ws ● }, from: 79
-10: {_ →  ● _$ebnf$1}, from: 108
-11: {nl →  ● %newline}, from: 108
-12: {PrimaryExpression$ebnf$1$subexpression$2 → IfStatement ● }, from: 79
-13: {_$ebnf$1 →  ● %_}, from: 108
-14: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 108
-15: {PrimaryExpression$ebnf$1 → PrimaryExpression$ebnf$1 PrimaryExpression$ebnf$1$subexpression$2 ● }, from: 0
-16: {PrimaryExpression$ebnf$1 → PrimaryExpression$ebnf$1 ● PrimaryExpression$ebnf$1$subexpression$2}, from: 0
-17: {PrimaryExpression → PrimaryExpression$ebnf$1 ● ElseStatement}, from: 0
-18: {PrimaryExpression$ebnf$1$subexpression$2 →  ● IfStatement}, from: 108
-19: {ElseStatement →  ● "ELSE" _ ReturnStatement ElseStatement$ebnf$1}, from: 108
-20: {IfStatement →  ● "IF" _ Expression _ ReturnStatement ws}, from: 108
+3: {IfStatement → "IF" _ Expression _ ReturnStatement _ ● }, from: 79
+4: {PrimaryExpression$ebnf$1$subexpression$2 → IfStatement ● }, from: 79
+5: {PrimaryExpression$ebnf$1 → PrimaryExpression$ebnf$1 PrimaryExpression$ebnf$1$subexpression$2 ● }, from: 0
+6: {PrimaryExpression$ebnf$1 → PrimaryExpression$ebnf$1 ● PrimaryExpression$ebnf$1$subexpression$2}, from: 0
+7: {PrimaryExpression → PrimaryExpression$ebnf$1 ● ElseStatement}, from: 0
+8: {PrimaryExpression$ebnf$1$subexpression$2 →  ● IfStatement}, from: 108
+9: {ElseStatement →  ● "ELSE" _ ReturnStatement __}, from: 108
+10: {IfStatement →  ● "IF" _ Expression _ ReturnStatement _}, from: 108
 
 Chart: 109
-0: {IfStatement → "IF" ● _ Expression _ ReturnStatement ws}, from: 108
+0: {IfStatement → "IF" ● _ Expression _ ReturnStatement _}, from: 108
 1: {_ →  ● _$ebnf$1}, from: 109
 2: {_$ebnf$1 →  ● %_}, from: 109
 3: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 109
@@ -1208,7 +1176,7 @@ Chart: 110
 0: {_$ebnf$1 → %_ ● }, from: 109
 1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 109
 2: {_ → _$ebnf$1 ● }, from: 109
-3: {IfStatement → "IF" _ ● Expression _ ReturnStatement ws}, from: 108
+3: {IfStatement → "IF" _ ● Expression _ ReturnStatement _}, from: 108
 4: {Expression →  ● lp __ ConditionalExpression __ rp}, from: 110
 5: {lp →  ● %lparen}, from: 110
 
@@ -1280,7 +1248,7 @@ Chart: 116
 Chart: 117
 0: {rp → %rparen ● }, from: 116
 1: {Expression → lp __ ConditionalExpression __ rp ● }, from: 110
-2: {IfStatement → "IF" _ Expression ● _ ReturnStatement ws}, from: 108
+2: {IfStatement → "IF" _ Expression ● _ ReturnStatement _}, from: 108
 3: {_ →  ● _$ebnf$1}, from: 117
 4: {_$ebnf$1 →  ● %_}, from: 117
 5: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 117
@@ -1289,7 +1257,7 @@ Chart: 118
 0: {_$ebnf$1 → %_ ● }, from: 117
 1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 117
 2: {_ → _$ebnf$1 ● }, from: 117
-3: {IfStatement → "IF" _ Expression _ ● ReturnStatement ws}, from: 108
+3: {IfStatement → "IF" _ Expression _ ● ReturnStatement _}, from: 108
 4: {ReturnStatement →  ● "RETURN" _ %number}, from: 118
 
 Chart: 119
@@ -1306,42 +1274,26 @@ Chart: 120
 
 Chart: 121
 0: {ReturnStatement → "RETURN" _ %number ● }, from: 118
-1: {IfStatement → "IF" _ Expression _ ReturnStatement ● ws}, from: 108
-2: {ws →  ● ws$ebnf$1}, from: 121
-3: {ws$ebnf$1 →  ● ws$ebnf$1$subexpression$1}, from: 121
-4: {ws$ebnf$1 →  ● ws$ebnf$1 ws$ebnf$1$subexpression$2}, from: 121
-5: {ws$ebnf$1$subexpression$1 →  ● _}, from: 121
-6: {ws$ebnf$1$subexpression$1 →  ● nl}, from: 121
-7: {_ →  ● _$ebnf$1}, from: 121
-8: {nl →  ● %newline}, from: 121
-9: {_$ebnf$1 →  ● %_}, from: 121
-10: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 121
+1: {IfStatement → "IF" _ Expression _ ReturnStatement ● _}, from: 108
+2: {_ →  ● _$ebnf$1}, from: 121
+3: {_$ebnf$1 →  ● %_}, from: 121
+4: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 121
 
 Chart: 122
 0: {_$ebnf$1 → %_ ● }, from: 121
 1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 121
 2: {_ → _$ebnf$1 ● }, from: 121
-3: {ws$ebnf$1$subexpression$1 → _ ● }, from: 121
-4: {ws$ebnf$1 → ws$ebnf$1$subexpression$1 ● }, from: 121
-5: {ws$ebnf$1 → ws$ebnf$1 ● ws$ebnf$1$subexpression$2}, from: 121
-6: {ws → ws$ebnf$1 ● }, from: 121
-7: {ws$ebnf$1$subexpression$2 →  ● _}, from: 122
-8: {ws$ebnf$1$subexpression$2 →  ● nl}, from: 122
-9: {IfStatement → "IF" _ Expression _ ReturnStatement ws ● }, from: 108
-10: {_ →  ● _$ebnf$1}, from: 122
-11: {nl →  ● %newline}, from: 122
-12: {PrimaryExpression$ebnf$1$subexpression$2 → IfStatement ● }, from: 108
-13: {_$ebnf$1 →  ● %_}, from: 122
-14: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 122
-15: {PrimaryExpression$ebnf$1 → PrimaryExpression$ebnf$1 PrimaryExpression$ebnf$1$subexpression$2 ● }, from: 0
-16: {PrimaryExpression$ebnf$1 → PrimaryExpression$ebnf$1 ● PrimaryExpression$ebnf$1$subexpression$2}, from: 0
-17: {PrimaryExpression → PrimaryExpression$ebnf$1 ● ElseStatement}, from: 0
-18: {PrimaryExpression$ebnf$1$subexpression$2 →  ● IfStatement}, from: 122
-19: {ElseStatement →  ● "ELSE" _ ReturnStatement ElseStatement$ebnf$1}, from: 122
-20: {IfStatement →  ● "IF" _ Expression _ ReturnStatement ws}, from: 122
+3: {IfStatement → "IF" _ Expression _ ReturnStatement _ ● }, from: 108
+4: {PrimaryExpression$ebnf$1$subexpression$2 → IfStatement ● }, from: 108
+5: {PrimaryExpression$ebnf$1 → PrimaryExpression$ebnf$1 PrimaryExpression$ebnf$1$subexpression$2 ● }, from: 0
+6: {PrimaryExpression$ebnf$1 → PrimaryExpression$ebnf$1 ● PrimaryExpression$ebnf$1$subexpression$2}, from: 0
+7: {PrimaryExpression → PrimaryExpression$ebnf$1 ● ElseStatement}, from: 0
+8: {PrimaryExpression$ebnf$1$subexpression$2 →  ● IfStatement}, from: 122
+9: {ElseStatement →  ● "ELSE" _ ReturnStatement __}, from: 122
+10: {IfStatement →  ● "IF" _ Expression _ ReturnStatement _}, from: 122
 
 Chart: 123
-0: {IfStatement → "IF" ● _ Expression _ ReturnStatement ws}, from: 122
+0: {IfStatement → "IF" ● _ Expression _ ReturnStatement _}, from: 122
 1: {_ →  ● _$ebnf$1}, from: 123
 2: {_$ebnf$1 →  ● %_}, from: 123
 3: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 123
@@ -1350,7 +1302,7 @@ Chart: 124
 0: {_$ebnf$1 → %_ ● }, from: 123
 1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 123
 2: {_ → _$ebnf$1 ● }, from: 123
-3: {IfStatement → "IF" _ ● Expression _ ReturnStatement ws}, from: 122
+3: {IfStatement → "IF" _ ● Expression _ ReturnStatement _}, from: 122
 4: {Expression →  ● lp __ ConditionalExpression __ rp}, from: 124
 5: {lp →  ● %lparen}, from: 124
 
@@ -1576,7 +1528,7 @@ Chart: 142
 Chart: 143
 0: {rp → %rparen ● }, from: 142
 1: {Expression → lp __ ConditionalExpression __ rp ● }, from: 124
-2: {IfStatement → "IF" _ Expression ● _ ReturnStatement ws}, from: 122
+2: {IfStatement → "IF" _ Expression ● _ ReturnStatement _}, from: 122
 3: {_ →  ● _$ebnf$1}, from: 143
 4: {_$ebnf$1 →  ● %_}, from: 143
 5: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 143
@@ -1585,7 +1537,7 @@ Chart: 144
 0: {_$ebnf$1 → %_ ● }, from: 143
 1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 143
 2: {_ → _$ebnf$1 ● }, from: 143
-3: {IfStatement → "IF" _ Expression _ ● ReturnStatement ws}, from: 122
+3: {IfStatement → "IF" _ Expression _ ● ReturnStatement _}, from: 122
 4: {ReturnStatement →  ● "RETURN" _ %number}, from: 144
 
 Chart: 145
@@ -1602,42 +1554,26 @@ Chart: 146
 
 Chart: 147
 0: {ReturnStatement → "RETURN" _ %number ● }, from: 144
-1: {IfStatement → "IF" _ Expression _ ReturnStatement ● ws}, from: 122
-2: {ws →  ● ws$ebnf$1}, from: 147
-3: {ws$ebnf$1 →  ● ws$ebnf$1$subexpression$1}, from: 147
-4: {ws$ebnf$1 →  ● ws$ebnf$1 ws$ebnf$1$subexpression$2}, from: 147
-5: {ws$ebnf$1$subexpression$1 →  ● _}, from: 147
-6: {ws$ebnf$1$subexpression$1 →  ● nl}, from: 147
-7: {_ →  ● _$ebnf$1}, from: 147
-8: {nl →  ● %newline}, from: 147
-9: {_$ebnf$1 →  ● %_}, from: 147
-10: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 147
+1: {IfStatement → "IF" _ Expression _ ReturnStatement ● _}, from: 122
+2: {_ →  ● _$ebnf$1}, from: 147
+3: {_$ebnf$1 →  ● %_}, from: 147
+4: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 147
 
 Chart: 148
 0: {_$ebnf$1 → %_ ● }, from: 147
 1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 147
 2: {_ → _$ebnf$1 ● }, from: 147
-3: {ws$ebnf$1$subexpression$1 → _ ● }, from: 147
-4: {ws$ebnf$1 → ws$ebnf$1$subexpression$1 ● }, from: 147
-5: {ws$ebnf$1 → ws$ebnf$1 ● ws$ebnf$1$subexpression$2}, from: 147
-6: {ws → ws$ebnf$1 ● }, from: 147
-7: {ws$ebnf$1$subexpression$2 →  ● _}, from: 148
-8: {ws$ebnf$1$subexpression$2 →  ● nl}, from: 148
-9: {IfStatement → "IF" _ Expression _ ReturnStatement ws ● }, from: 122
-10: {_ →  ● _$ebnf$1}, from: 148
-11: {nl →  ● %newline}, from: 148
-12: {PrimaryExpression$ebnf$1$subexpression$2 → IfStatement ● }, from: 122
-13: {_$ebnf$1 →  ● %_}, from: 148
-14: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 148
-15: {PrimaryExpression$ebnf$1 → PrimaryExpression$ebnf$1 PrimaryExpression$ebnf$1$subexpression$2 ● }, from: 0
-16: {PrimaryExpression$ebnf$1 → PrimaryExpression$ebnf$1 ● PrimaryExpression$ebnf$1$subexpression$2}, from: 0
-17: {PrimaryExpression → PrimaryExpression$ebnf$1 ● ElseStatement}, from: 0
-18: {PrimaryExpression$ebnf$1$subexpression$2 →  ● IfStatement}, from: 148
-19: {ElseStatement →  ● "ELSE" _ ReturnStatement ElseStatement$ebnf$1}, from: 148
-20: {IfStatement →  ● "IF" _ Expression _ ReturnStatement ws}, from: 148
+3: {IfStatement → "IF" _ Expression _ ReturnStatement _ ● }, from: 122
+4: {PrimaryExpression$ebnf$1$subexpression$2 → IfStatement ● }, from: 122
+5: {PrimaryExpression$ebnf$1 → PrimaryExpression$ebnf$1 PrimaryExpression$ebnf$1$subexpression$2 ● }, from: 0
+6: {PrimaryExpression$ebnf$1 → PrimaryExpression$ebnf$1 ● PrimaryExpression$ebnf$1$subexpression$2}, from: 0
+7: {PrimaryExpression → PrimaryExpression$ebnf$1 ● ElseStatement}, from: 0
+8: {PrimaryExpression$ebnf$1$subexpression$2 →  ● IfStatement}, from: 148
+9: {ElseStatement →  ● "ELSE" _ ReturnStatement __}, from: 148
+10: {IfStatement →  ● "IF" _ Expression _ ReturnStatement _}, from: 148
 
 Chart: 149
-0: {IfStatement → "IF" ● _ Expression _ ReturnStatement ws}, from: 148
+0: {IfStatement → "IF" ● _ Expression _ ReturnStatement _}, from: 148
 1: {_ →  ● _$ebnf$1}, from: 149
 2: {_$ebnf$1 →  ● %_}, from: 149
 3: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 149
@@ -1646,7 +1582,7 @@ Chart: 150
 0: {_$ebnf$1 → %_ ● }, from: 149
 1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 149
 2: {_ → _$ebnf$1 ● }, from: 149
-3: {IfStatement → "IF" _ ● Expression _ ReturnStatement ws}, from: 148
+3: {IfStatement → "IF" _ ● Expression _ ReturnStatement _}, from: 148
 4: {Expression →  ● lp __ ConditionalExpression __ rp}, from: 150
 5: {lp →  ● %lparen}, from: 150
 
@@ -1701,7 +1637,7 @@ Chart: 155
 Chart: 156
 0: {rp → %rparen ● }, from: 155
 1: {Expression → lp __ ConditionalExpression __ rp ● }, from: 150
-2: {IfStatement → "IF" _ Expression ● _ ReturnStatement ws}, from: 148
+2: {IfStatement → "IF" _ Expression ● _ ReturnStatement _}, from: 148
 3: {_ →  ● _$ebnf$1}, from: 156
 4: {_$ebnf$1 →  ● %_}, from: 156
 5: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 156
@@ -1710,7 +1646,7 @@ Chart: 157
 0: {_$ebnf$1 → %_ ● }, from: 156
 1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 156
 2: {_ → _$ebnf$1 ● }, from: 156
-3: {IfStatement → "IF" _ Expression _ ● ReturnStatement ws}, from: 148
+3: {IfStatement → "IF" _ Expression _ ● ReturnStatement _}, from: 148
 4: {ReturnStatement →  ● "RETURN" _ %number}, from: 157
 
 Chart: 158
@@ -1727,42 +1663,26 @@ Chart: 159
 
 Chart: 160
 0: {ReturnStatement → "RETURN" _ %number ● }, from: 157
-1: {IfStatement → "IF" _ Expression _ ReturnStatement ● ws}, from: 148
-2: {ws →  ● ws$ebnf$1}, from: 160
-3: {ws$ebnf$1 →  ● ws$ebnf$1$subexpression$1}, from: 160
-4: {ws$ebnf$1 →  ● ws$ebnf$1 ws$ebnf$1$subexpression$2}, from: 160
-5: {ws$ebnf$1$subexpression$1 →  ● _}, from: 160
-6: {ws$ebnf$1$subexpression$1 →  ● nl}, from: 160
-7: {_ →  ● _$ebnf$1}, from: 160
-8: {nl →  ● %newline}, from: 160
-9: {_$ebnf$1 →  ● %_}, from: 160
-10: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 160
+1: {IfStatement → "IF" _ Expression _ ReturnStatement ● _}, from: 148
+2: {_ →  ● _$ebnf$1}, from: 160
+3: {_$ebnf$1 →  ● %_}, from: 160
+4: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 160
 
 Chart: 161
 0: {_$ebnf$1 → %_ ● }, from: 160
 1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 160
 2: {_ → _$ebnf$1 ● }, from: 160
-3: {ws$ebnf$1$subexpression$1 → _ ● }, from: 160
-4: {ws$ebnf$1 → ws$ebnf$1$subexpression$1 ● }, from: 160
-5: {ws$ebnf$1 → ws$ebnf$1 ● ws$ebnf$1$subexpression$2}, from: 160
-6: {ws → ws$ebnf$1 ● }, from: 160
-7: {ws$ebnf$1$subexpression$2 →  ● _}, from: 161
-8: {ws$ebnf$1$subexpression$2 →  ● nl}, from: 161
-9: {IfStatement → "IF" _ Expression _ ReturnStatement ws ● }, from: 148
-10: {_ →  ● _$ebnf$1}, from: 161
-11: {nl →  ● %newline}, from: 161
-12: {PrimaryExpression$ebnf$1$subexpression$2 → IfStatement ● }, from: 148
-13: {_$ebnf$1 →  ● %_}, from: 161
-14: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 161
-15: {PrimaryExpression$ebnf$1 → PrimaryExpression$ebnf$1 PrimaryExpression$ebnf$1$subexpression$2 ● }, from: 0
-16: {PrimaryExpression$ebnf$1 → PrimaryExpression$ebnf$1 ● PrimaryExpression$ebnf$1$subexpression$2}, from: 0
-17: {PrimaryExpression → PrimaryExpression$ebnf$1 ● ElseStatement}, from: 0
-18: {PrimaryExpression$ebnf$1$subexpression$2 →  ● IfStatement}, from: 161
-19: {ElseStatement →  ● "ELSE" _ ReturnStatement ElseStatement$ebnf$1}, from: 161
-20: {IfStatement →  ● "IF" _ Expression _ ReturnStatement ws}, from: 161
+3: {IfStatement → "IF" _ Expression _ ReturnStatement _ ● }, from: 148
+4: {PrimaryExpression$ebnf$1$subexpression$2 → IfStatement ● }, from: 148
+5: {PrimaryExpression$ebnf$1 → PrimaryExpression$ebnf$1 PrimaryExpression$ebnf$1$subexpression$2 ● }, from: 0
+6: {PrimaryExpression$ebnf$1 → PrimaryExpression$ebnf$1 ● PrimaryExpression$ebnf$1$subexpression$2}, from: 0
+7: {PrimaryExpression → PrimaryExpression$ebnf$1 ● ElseStatement}, from: 0
+8: {PrimaryExpression$ebnf$1$subexpression$2 →  ● IfStatement}, from: 161
+9: {ElseStatement →  ● "ELSE" _ ReturnStatement __}, from: 161
+10: {IfStatement →  ● "IF" _ Expression _ ReturnStatement _}, from: 161
 
 Chart: 162
-0: {ElseStatement → "ELSE" ● _ ReturnStatement ElseStatement$ebnf$1}, from: 161
+0: {ElseStatement → "ELSE" ● _ ReturnStatement __}, from: 161
 1: {_ →  ● _$ebnf$1}, from: 162
 2: {_$ebnf$1 →  ● %_}, from: 162
 3: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 162
@@ -1771,7 +1691,7 @@ Chart: 163
 0: {_$ebnf$1 → %_ ● }, from: 162
 1: {_$ebnf$1 → _$ebnf$1 ● %_}, from: 162
 2: {_ → _$ebnf$1 ● }, from: 162
-3: {ElseStatement → "ELSE" _ ● ReturnStatement ElseStatement$ebnf$1}, from: 161
+3: {ElseStatement → "ELSE" _ ● ReturnStatement __}, from: 161
 4: {ReturnStatement →  ● "RETURN" _ %number}, from: 163
 
 Chart: 164
@@ -1788,20 +1708,14 @@ Chart: 165
 
 Chart: 166
 0: {ReturnStatement → "RETURN" _ %number ● }, from: 163
-1: {ElseStatement → "ELSE" _ ReturnStatement ● ElseStatement$ebnf$1}, from: 161
-2: {ElseStatement$ebnf$1 →  ● ws}, from: 166
-3: {ElseStatement$ebnf$1 →  ● }, from: 166
-4: {ws →  ● ws$ebnf$1}, from: 166
-5: {ElseStatement → "ELSE" _ ReturnStatement ElseStatement$ebnf$1 ● }, from: 161
-6: {ws$ebnf$1 →  ● ws$ebnf$1$subexpression$1}, from: 166
-7: {ws$ebnf$1 →  ● ws$ebnf$1 ws$ebnf$1$subexpression$2}, from: 166
+1: {ElseStatement → "ELSE" _ ReturnStatement ● __}, from: 161
+2: {__ →  ● __$ebnf$1}, from: 166
+3: {__$ebnf$1 →  ● }, from: 166
+4: {__$ebnf$1 →  ● __$ebnf$1 %_}, from: 166
+5: {__ → __$ebnf$1 ● }, from: 166
+6: {__$ebnf$1 → __$ebnf$1 ● %_}, from: 166
+7: {ElseStatement → "ELSE" _ ReturnStatement __ ● }, from: 161
 8: {PrimaryExpression → PrimaryExpression$ebnf$1 ElseStatement ● }, from: 0
-9: {ws$ebnf$1$subexpression$1 →  ● _}, from: 166
-10: {ws$ebnf$1$subexpression$1 →  ● nl}, from: 166
-11: {_ →  ● _$ebnf$1}, from: 166
-12: {nl →  ● %newline}, from: 166
-13: {_$ebnf$1 →  ● %_}, from: 166
-14: {_$ebnf$1 →  ● _$ebnf$1 %_}, from: 166
 
 
 Parse results: 
@@ -1813,14 +1727,14 @@ Parse results:
             lineBreaks: [33m0[39m,
             line: [33m1[39m,
             col: [33m1[39m },
-          [ [ [ [ { type: [32m'LOGICAL_EXPRESSION'[39m,
+          [ [ [ [ { type: [32m'RELATIONAL_EXPRESSION'[39m,
                     leftOp: [32m'x'[39m,
                     relationalOp: [32m'>'[39m,
                     rightOp: [32m'0'[39m },
                   { type: [32m'OR_LOGICAL_EXPRESSION'[39m,
                     logicalOp: [32m'OR'[39m,
                     expression:
-                     [ { type: [32m'LOGICAL_EXPRESSION'[39m,
+                     [ { type: [32m'RELATIONAL_EXPRESSION'[39m,
                          leftOp: [32m'z'[39m,
                          relationalOp: [32m'>'[39m,
                          rightOp: [32m'0'[39m } ] } ] ],
@@ -1831,35 +1745,35 @@ Parse results:
                    { type: [32m'AND_LOGICAL_EXPRESSION'[39m,
                      logicalOp: [32m'AND'[39m,
                      expression:
-                      [ [ { type: [32m'LOGICAL_EXPRESSION'[39m,
+                      [ [ { type: [32m'RELATIONAL_EXPRESSION'[39m,
                             leftOp: [32m'z'[39m,
                             relationalOp: [32m'>'[39m,
                             rightOp: [32m'0'[39m },
                           { type: [32m'OR_LOGICAL_EXPRESSION'[39m,
                             logicalOp: [32m'OR'[39m,
                             expression:
-                             [ [ { type: [32m'LOGICAL_EXPRESSION'[39m,
+                             [ [ { type: [32m'RELATIONAL_EXPRESSION'[39m,
                                    leftOp: [32m'x'[39m,
                                    relationalOp: [32m'>'[39m,
                                    rightOp: [32m'0'[39m },
                                  { type: [32m'AND_LOGICAL_EXPRESSION'[39m,
                                    logicalOp: [32m'AND'[39m,
                                    expression:
-                                    [ { type: [32m'LOGICAL_EXPRESSION'[39m,
+                                    [ { type: [32m'RELATIONAL_EXPRESSION'[39m,
                                         leftOp: [32m'z'[39m,
                                         relationalOp: [32m'>'[39m,
                                         rightOp: [32m'0'[39m } ] } ] ] } ] ] } ] } ],
             { type: [32m'AND_LOGICAL_EXPRESSION'[39m,
               logicalOp: [32m'AND'[39m,
               expression:
-               [ { type: [32m'LOGICAL_EXPRESSION'[39m,
+               [ { type: [32m'RELATIONAL_EXPRESSION'[39m,
                    leftOp: [32m'y'[39m,
                    relationalOp: [32m'>'[39m,
                    rightOp: [32m'0'[39m },
                  { type: [32m'OR_LOGICAL_EXPRESSION'[39m,
                    logicalOp: [32m'OR'[39m,
                    expression:
-                    [ { type: [32m'LOGICAL_EXPRESSION'[39m,
+                    [ { type: [32m'RELATIONAL_EXPRESSION'[39m,
                         leftOp: [32m'z'[39m,
                         relationalOp: [32m'>'[39m,
                         rightOp: [32m'0'[39m } ] } ] } ],
@@ -1889,14 +1803,14 @@ Parse results:
             lineBreaks: [33m0[39m,
             line: [33m1[39m,
             col: [33m106[39m },
-          [ { type: [32m'LOGICAL_EXPRESSION'[39m,
+          [ { type: [32m'RELATIONAL_EXPRESSION'[39m,
               leftOp: [32m'z'[39m,
               relationalOp: [32m'>'[39m,
               rightOp: [32m'0'[39m },
             { type: [32m'AND_LOGICAL_EXPRESSION'[39m,
               logicalOp: [32m'AND'[39m,
               expression:
-               [ { type: [32m'LOGICAL_EXPRESSION'[39m,
+               [ { type: [32m'RELATIONAL_EXPRESSION'[39m,
                    leftOp: [32m'x'[39m,
                    relationalOp: [32m'>'[39m,
                    rightOp: [32m'100'[39m },
@@ -1930,7 +1844,7 @@ Parse results:
             lineBreaks: [33m0[39m,
             line: [33m1[39m,
             col: [33m157[39m },
-          [ { type: [32m'LOGICAL_EXPRESSION'[39m,
+          [ { type: [32m'RELATIONAL_EXPRESSION'[39m,
               leftOp: [32m'y'[39m,
               relationalOp: [32m'>'[39m,
               rightOp: [32m'0'[39m } ],
@@ -1960,14 +1874,14 @@ Parse results:
             lineBreaks: [33m0[39m,
             line: [33m1[39m,
             col: [33m177[39m },
-          [ [ [ { type: [32m'LOGICAL_EXPRESSION'[39m,
+          [ [ [ { type: [32m'RELATIONAL_EXPRESSION'[39m,
                   leftOp: [32m'x'[39m,
                   relationalOp: [32m'>'[39m,
                   rightOp: [32m'0'[39m } ] ],
             { type: [32m'AND_LOGICAL_EXPRESSION'[39m,
               logicalOp: [32m'AND'[39m,
               expression:
-               [ { type: [32m'LOGICAL_EXPRESSION'[39m,
+               [ { type: [32m'RELATIONAL_EXPRESSION'[39m,
                    leftOp: [32m'z'[39m,
                    relationalOp: [32m'>'[39m,
                    rightOp: [32m'0'[39m } ] } ],
